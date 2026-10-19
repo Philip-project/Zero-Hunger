@@ -97,16 +97,16 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
   };
 
   return (
-    <div className="bg-[#080808] text-white">
-      {/* HERO */}
-      <section className="bg-[#080808] pt-32 sm:pt-40 pb-20 sm:pb-28 border-b border-white/10">
-        <div className="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+    <div className="w-full bg-[#080808] text-white overflow-x-hidden">
+      {/* HERO SECTION — 100% FLUID RESPONSIVE */}
+      <section className="w-full bg-[#080808] pt-28 xs:pt-32 sm:pt-40 pb-16 xs:pb-20 sm:pb-28 border-b border-white/10">
+        <div className="w-full max-w-[1360px] 2xl:max-w-[1560px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 xl:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
             <ScrollReveal className="lg:col-span-8">
-              <span className="text-xs font-mono-tabular font-bold uppercase tracking-[0.22em] text-[#49E619] block mb-4">
+              <span className="text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-[0.22em] text-[#49E619] block mb-3 xs:mb-4">
                 ABOUT US · ZERO HUNGER INITIATIVE
               </span>
-              <h1 className="font-display-sans uppercase text-5xl sm:text-6xl lg:text-7xl xl:text-[5.25rem] font-black tracking-[-0.04em] leading-[0.92] text-white">
+              <h1 className="font-display-sans uppercase text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-[5.25rem] 2xl:text-[5.75rem] font-black tracking-[-0.04em] leading-[0.92] text-white break-words">
                 WE BELIEVE
                 <br />
                 EVERY PLATE
@@ -116,44 +116,44 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
             </ScrollReveal>
 
             <ScrollReveal delay={0.15} className="lg:col-span-4">
-              <p className="text-base sm:text-lg text-white/80 leading-relaxed">
+              <p className="text-sm xs:text-base sm:text-lg text-white/80 leading-relaxed">
                 Born in the courtyards of Hyderabad’s public hospitals in 2022, Zero Hunger is a humanitarian movement reimagining community food systems with dignity, proximity, and radical transparency.
               </p>
             </ScrollReveal>
           </div>
 
           {/* Large Documentary Panorama */}
-          <ScrollReveal delay={0.22} scale className="mt-14 sm:mt-20">
-            <div className="relative rounded-[18px] overflow-hidden border border-white/15 aspect-[16/9] sm:aspect-[21/9] shadow-2xl">
+          <ScrollReveal delay={0.22} scale className="mt-10 xs:mt-14 sm:mt-20">
+            <div className="relative rounded-[16px] sm:rounded-[20px] overflow-hidden border border-white/15 aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] shadow-2xl">
               <EditorialImage
                 src={IMAGES.communityKitchen}
                 alt="Inside the Zero Hunger flagship community kitchen in Secunderabad at dawn"
                 priority
-                className="w-full h-full"
+                className="w-full h-full object-cover"
               />
             </div>
-            <p className="mt-3 text-xs font-mono-tabular text-white/60">
+            <p className="mt-2.5 xs:mt-3 text-[11px] xs:text-xs font-mono-tabular text-white/60">
               Fig. 01 — Dawn preparation inside our Secunderabad flagship Community Kitchen, where 1,200+ fresh meals begin each morning at 5:30 AM.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* 1. OUR STORY & 2. WHY ZERO HUNGER */}
-      <section className="bg-white text-[#080808] py-24 sm:py-32">
-        <div className="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+      {/* 01. OUR STORY & 02. WHY ZERO HUNGER */}
+      <section className="w-full bg-white text-[#080808] py-16 xs:py-20 sm:py-28 lg:py-32">
+        <div className="w-full max-w-[1360px] 2xl:max-w-[1560px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 xl:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16">
             {/* Left Essay Column: Our Story */}
             <ScrollReveal className="lg:col-span-7">
-              <span className="text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#188D44] block mb-3">
+              <span className="text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#188D44] block mb-2.5 sm:mb-3">
                 01 · OUR STORY
               </span>
-              <h2 className="font-display-sans uppercase text-3xl sm:text-4xl lg:text-5xl font-black text-[#080808] tracking-[-0.04em] leading-[0.95]">
+              <h2 className="font-display-sans uppercase text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black text-[#080808] tracking-[-0.04em] leading-[0.95] break-words">
                 From a Single Courtyard Stove to 28 Communities.
               </h2>
 
-              <div className="mt-8 space-y-6 text-base sm:text-lg text-[#080808]/85 leading-relaxed max-w-2xl">
-                <p className="first-letter:text-5xl first-letter:font-display-sans first-letter:font-black first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-[#188D44]">
+              <div className="mt-6 sm:mt-8 space-y-4 sm:space-y-6 text-sm xs:text-base sm:text-lg text-[#080808]/85 leading-relaxed max-w-2xl">
+                <p className="first-letter:text-4xl sm:first-letter:text-5xl first-letter:font-display-sans first-letter:font-black first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-[#188D44]">
                   During the winter of 2022, Dr. Arjun Vardhan Reddy noticed a quiet crisis unfolding outside the wards of Osmania General Hospital in Hyderabad. Families who had traveled from rural Telangana districts to care for critically ill relatives were sleeping on pavements and skipping meals for days so they could afford diagnostic tests and prescriptions.
                 </p>
                 <p className="text-[#122023]/80">
@@ -166,31 +166,31 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
             </ScrollReveal>
 
             {/* Right Column: Why Zero Hunger + Editorial Portrait */}
-            <ScrollReveal delay={0.15} className="lg:col-span-5 flex flex-col justify-between">
-              <div className="p-8 sm:p-10 rounded-[18px] bg-[#122023] text-white border border-[#122023]">
-                <span className="text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#49E619] block mb-3">
+            <ScrollReveal delay={0.15} className="lg:col-span-5 flex flex-col justify-between gap-6 sm:gap-8">
+              <div className="p-6 xs:p-8 sm:p-10 rounded-[16px] sm:rounded-[20px] bg-[#122023] text-white border border-[#122023]">
+                <span className="text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#49E619] block mb-2.5 sm:mb-3">
                   02 · WHY ZERO HUNGER
                 </span>
-                <h3 className="font-display-sans uppercase text-2xl sm:text-3xl font-black text-white leading-tight">
+                <h3 className="font-display-sans uppercase text-xl xs:text-2xl sm:text-3xl font-black text-white leading-tight">
                   Because Charity Feeds for a Day; Sovereignty Nourishes for a Lifetime.
                 </h3>
-                <p className="mt-4 text-sm sm:text-base text-white/80 leading-relaxed">
+                <p className="mt-3 sm:mt-4 text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
                   Conventional food relief often treats hungry families as passive statistics—handing out cold, plastic-wrapped rations in hurried queues. We reject that model.
                 </p>
-                <p className="mt-4 text-sm sm:text-base text-white/80 leading-relaxed">
+                <p className="mt-3 sm:mt-4 text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
                   Every Zero Hunger initiative is co-governed by neighborhood stewards, sources directly from smallholder women farmers, and serves meals on reusable stainless steel plates with the warmth of a family kitchen.
                 </p>
               </div>
 
-              <div className="mt-8">
-                <div className="aspect-[4/3] rounded-[18px] overflow-hidden border border-[#122023]/15">
+              <div>
+                <div className="aspect-[4/3] rounded-[16px] sm:rounded-[18px] overflow-hidden border border-[#122023]/15">
                   <EditorialImage
                     src={IMAGES.womenSupport}
                     alt="Rural women cooperative members in Sangareddy holding fresh green harvest"
-                    className="w-full h-full"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <p className="mt-2.5 text-xs font-mono-tabular text-[#6F6F6F]">
+                <p className="mt-2.5 text-[11px] xs:text-xs font-mono-tabular text-[#6F6F6F]">
                   Fig. 02 — Sangareddy Women’s Growers Collective supplying fresh leafy greens to our urban kitchens.
                 </p>
               </div>
@@ -199,30 +199,34 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
         </div>
       </section>
 
-      {/* 3. OUR MISSION & 4. OUR VISION */}
-      <section className="bg-[#F2F4F3] text-[#122023] py-20 sm:py-28 border-y border-[#122023]/10">
-        <div className="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
-            <ScrollReveal className="rounded-[18px] bg-[#49E619] text-[#122023] p-8 sm:p-12 shadow-sm">
-              <span className="text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#122023]/80 block mb-4">
-                03 · OUR MISSION
-              </span>
-              <h2 className="font-display-sans uppercase text-2xl sm:text-4xl font-black text-[#122023] leading-[0.96] tracking-[-0.03em]">
-                To guarantee daily, dignified access to freshly cooked, nutrient-dense food for every vulnerable child, caregiver, and elder we serve.
-              </h2>
-              <p className="mt-5 text-sm sm:text-base text-[#122023]/85 font-medium leading-relaxed">
+      {/* 03. OUR MISSION & 04. OUR VISION */}
+      <section className="w-full bg-[#F2F4F3] text-[#122023] py-16 xs:py-20 sm:py-28 border-y border-[#122023]/10">
+        <div className="w-full max-w-[1360px] 2xl:max-w-[1560px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 xl:px-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
+            <ScrollReveal className="rounded-[16px] sm:rounded-[20px] bg-[#49E619] text-[#122023] p-6 xs:p-8 sm:p-10 lg:p-12 shadow-sm flex flex-col justify-between">
+              <div>
+                <span className="text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#122023]/80 block mb-3 sm:mb-4">
+                  03 · OUR MISSION
+                </span>
+                <h2 className="font-display-sans uppercase text-2xl xs:text-3xl sm:text-4xl font-black text-[#122023] leading-[0.96] tracking-[-0.03em] break-words">
+                  To guarantee daily, dignified access to freshly cooked, nutrient-dense food for every vulnerable child, caregiver, and elder we serve.
+                </h2>
+              </div>
+              <p className="mt-4 sm:mt-5 text-xs xs:text-sm sm:text-base text-[#122023]/85 font-medium leading-relaxed">
                 We mobilize community kitchens, school lunch partnerships, and rapid-response grain banks to eliminate acute hunger where it hurts most—outside public hospitals, inside rural classrooms, and across drought-prone villages.
               </p>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.15} className="rounded-[18px] bg-[#4EDBE2] text-[#122023] p-8 sm:p-12 shadow-sm">
-              <span className="text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#122023]/80 block mb-4">
-                04 · OUR VISION
-              </span>
-              <h2 className="font-display-sans uppercase text-2xl sm:text-4xl font-black text-[#122023] leading-[0.96] tracking-[-0.03em]">
-                A resilient, circular food ecosystem where every neighborhood grows, cooks, and shares nourishment without anyone sleeping hungry.
-              </h2>
-              <p className="mt-5 text-sm sm:text-base text-[#122023]/85 font-medium leading-relaxed">
+            <ScrollReveal delay={0.15} className="rounded-[16px] sm:rounded-[20px] bg-[#4EDBE2] text-[#122023] p-6 xs:p-8 sm:p-10 lg:p-12 shadow-sm flex flex-col justify-between">
+              <div>
+                <span className="text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#122023]/80 block mb-3 sm:mb-4">
+                  04 · OUR VISION
+                </span>
+                <h2 className="font-display-sans uppercase text-2xl xs:text-3xl sm:text-4xl font-black text-[#122023] leading-[0.96] tracking-[-0.03em] break-words">
+                  A resilient, circular food ecosystem where every neighborhood grows, cooks, and shares nourishment without anyone sleeping hungry.
+                </h2>
+              </div>
+              <p className="mt-4 sm:mt-5 text-xs xs:text-sm sm:text-base text-[#122023]/85 font-medium leading-relaxed">
                 We envision a future where emergency relief evolves into community-owned food sovereignty—linking rural women’s homestead gardens directly to urban community tables.
               </p>
             </ScrollReveal>
@@ -233,12 +237,12 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
       {/* FIND THE PROGRAM BUILT FOR YOUR MISSION */}
       <MissionProgramsShowcase onOpenSupport={onOpenSupport} />
 
-      {/* 5. OUR VALUES — FIVE PRINCIPLES THAT GOVERN EVERY PLATE */}
+      {/* 05. OUR VALUES — FIVE PRINCIPLES THAT GOVERN EVERY PLATE */}
       <FivePrinciplesShowcase />
 
-      {/* 6. HOW WE WORK */}
-      <section className="bg-[#122023] text-white py-24 sm:py-32 border-b border-white/10">
-        <div className="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
+      {/* 06. HOW WE WORK */}
+      <section className="w-full bg-[#122023] text-white py-16 xs:py-20 sm:py-28 lg:py-32 border-b border-white/10">
+        <div className="w-full max-w-[1360px] 2xl:max-w-[1560px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 xl:px-16">
           <SectionHeading
             light
             eyebrow="06 · HOW WE WORK"
@@ -246,30 +250,30 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
             description="Our four-stage operational protocol ensures nutritional integrity, zero single-use plastic waste, and complete community accountability."
           />
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-10 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {HOW_WE_WORK.map((item, idx) => {
               const cardStyle = PHASE_CARD_STYLES[idx % PHASE_CARD_STYLES.length];
               const isDarkCard = idx === 3;
               return (
                 <ScrollReveal
                   key={item.step}
-                  delay={idx * 0.1}
-                  className={`p-7 rounded-[16px] ${cardStyle} flex flex-col justify-between shadow-lg`}
+                  delay={idx * 0.08}
+                  className={`p-6 sm:p-7 rounded-[16px] ${cardStyle} flex flex-col justify-between shadow-lg`}
                 >
                   <div>
                     <div
-                      className={`flex items-center justify-between text-xs font-mono-tabular font-bold pb-4 border-b ${
+                      className={`flex items-center justify-between text-xs font-mono-tabular font-bold pb-3.5 sm:pb-4 border-b ${
                         isDarkCard ? 'border-white/20 text-white/80' : 'border-[#122023]/15 text-[#122023]/80'
                       }`}
                     >
                       <span>PHASE {item.step}</span>
                       <span>PROTOCOL</span>
                     </div>
-                    <h3 className="mt-6 font-display-sans uppercase text-2xl font-black leading-tight">
+                    <h3 className="mt-4 sm:mt-6 font-display-sans uppercase text-xl sm:text-2xl font-black leading-tight">
                       {item.title}
                     </h3>
                     <p
-                      className={`mt-3 text-sm leading-relaxed font-medium ${
+                      className={`mt-2.5 sm:mt-3 text-xs sm:text-sm leading-relaxed font-medium ${
                         isDarkCard ? 'text-white/85' : 'text-[#122023]/85'
                       }`}
                     >
@@ -278,7 +282,7 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
                   </div>
 
                   <div
-                    className={`mt-8 pt-4 border-t text-xs font-mono-tabular font-bold ${
+                    className={`mt-6 sm:mt-8 pt-3.5 sm:pt-4 border-t text-xs font-mono-tabular font-bold ${
                       isDarkCard ? 'border-white/20 text-[#B9FF2C]' : 'border-[#122023]/15 text-[#122023]'
                     }`}
                   >
@@ -292,23 +296,23 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
       </section>
 
       {/* JOURNEY TIMELINE */}
-      <section className="bg-[#F2F4F3] text-[#080808] py-24 sm:py-32 border-b border-[#122023]/10">
-        <div className="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
+      <section className="w-full bg-[#F2F4F3] text-[#080808] py-16 xs:py-20 sm:py-28 lg:py-32 border-b border-[#122023]/10">
+        <div className="w-full max-w-[1360px] 2xl:max-w-[1560px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 xl:px-16">
           <SectionHeading
             eyebrow="CHRONICLE · 2022 — 2026"
             title="Our Journey Toward Zero Hunger."
             description="Every milestone represents a neighborhood that refused to let its neighbors sleep hungry."
           />
 
-          <div className="mt-16 space-y-6">
+          <div className="mt-10 sm:mt-16 space-y-4 sm:space-y-6">
             {IMPACT_TIMELINE.map((event, idx) => (
               <ScrollReveal
                 key={event.year}
                 delay={idx * 0.08}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-6 p-7 sm:p-9 rounded-[16px] bg-white border border-[#122023]/12 items-center shadow-xs"
+                className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 p-5 sm:p-7 md:p-9 rounded-[16px] bg-white border border-[#122023]/12 items-center shadow-xs"
               >
-                <div className="lg:col-span-3">
-                  <div className="font-display-sans text-4xl sm:text-5xl font-black text-[#080808]">
+                <div className="md:col-span-3">
+                  <div className="font-display-sans text-3xl sm:text-4xl md:text-5xl font-black text-[#080808]">
                     {event.year}
                   </div>
                   <div className="mt-1 text-xs font-mono-tabular font-bold uppercase tracking-wider text-[#188D44]">
@@ -316,20 +320,20 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
                   </div>
                 </div>
 
-                <div className="lg:col-span-6">
-                  <h3 className="font-display-sans uppercase text-xl sm:text-2xl font-black text-[#080808]">
+                <div className="md:col-span-6">
+                  <h3 className="font-display-sans uppercase text-lg sm:text-xl md:text-2xl font-black text-[#080808]">
                     {event.title}
                   </h3>
-                  <p className="mt-2 text-sm sm:text-base text-[#122023]/75 leading-relaxed">
+                  <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm md:text-base text-[#122023]/75 leading-relaxed">
                     {event.description}
                   </p>
                 </div>
 
-                <div className="lg:col-span-3 lg:text-right border-t lg:border-t-0 lg:border-l border-[#122023]/10 pt-4 lg:pt-0 lg:pl-6">
-                  <div className="font-mono-tabular text-xl font-bold text-[#188D44]">
+                <div className="md:col-span-3 md:text-right border-t md:border-t-0 md:border-l border-[#122023]/10 pt-3 md:pt-0 md:pl-6">
+                  <div className="font-mono-tabular text-lg sm:text-xl font-bold text-[#188D44]">
                     {event.metric}
                   </div>
-                  <div className="text-xs text-[#6F6F6F] mt-1">
+                  <div className="text-[11px] sm:text-xs text-[#6F6F6F] mt-0.5 sm:mt-1">
                     {event.location}
                   </div>
                 </div>
@@ -339,10 +343,10 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
         </div>
       </section>
 
-      {/* 7. OUR TEAM */}
-      <section className="bg-white text-[#080808] py-24 sm:py-32 border-b border-[#122023]/10">
-        <div className="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+      {/* 07. OUR TEAM */}
+      <section className="w-full bg-white text-[#080808] py-16 xs:py-20 sm:py-28 lg:py-32 border-b border-[#122023]/10">
+        <div className="w-full max-w-[1360px] 2xl:max-w-[1560px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 xl:px-16">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 sm:mb-16">
             <SectionHeading
               eyebrow="07 · STEWARDSHIP & LEADERSHIP"
               title="The People Behind the Plates."
@@ -351,6 +355,7 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
             <Button
               type="button"
               variant="primary"
+              className="w-full sm:w-auto shrink-0"
               onClick={() => onOpenSupport('volunteer')}
             >
               <span>Join Our Field Team</span>
@@ -358,29 +363,29 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {TEAM_MEMBERS.map((member, idx) => (
-              <ScrollReveal key={member.id} delay={idx * 0.1} className="group flex flex-col">
-                <div className="aspect-[4/3] rounded-[16px] overflow-hidden border border-[#122023]/12 mb-5 bg-[#080808]">
+              <ScrollReveal key={member.id} delay={idx * 0.08} className="group flex flex-col">
+                <div className="aspect-[4/3] rounded-[16px] overflow-hidden border border-[#122023]/12 mb-4 sm:mb-5 bg-[#080808]">
                   <EditorialImage
                     src={member.image}
                     alt={`${member.name} — ${member.role}`}
-                    className="w-full h-full"
+                    className="w-full h-full object-cover"
                     imgClassName="grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                   />
                 </div>
-                <div className="flex items-center gap-2 text-xs text-[#6F6F6F] uppercase tracking-wider font-mono-tabular">
+                <div className="flex items-center gap-2 text-[11px] sm:text-xs text-[#6F6F6F] uppercase tracking-wider font-mono-tabular">
                   <span>{member.location}</span>
                   <span aria-hidden="true">·</span>
                   <span>{member.yearsWithOrg}</span>
                 </div>
-                <h3 className="mt-2 font-display-sans uppercase text-xl font-black text-[#080808]">
+                <h3 className="mt-1.5 sm:mt-2 font-display-sans uppercase text-lg sm:text-xl font-black text-[#080808]">
                   {member.name}
                 </h3>
-                <div className="text-xs font-mono-tabular font-bold text-[#188D44] uppercase tracking-wider mt-1">
+                <div className="text-[11px] sm:text-xs font-mono-tabular font-bold text-[#188D44] uppercase tracking-wider mt-1">
                   {member.role}
                 </div>
-                <p className="mt-3 text-sm text-[#122023]/75 leading-relaxed">
+                <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm text-[#122023]/75 leading-relaxed">
                   {member.bio}
                 </p>
               </ScrollReveal>
@@ -389,41 +394,41 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
         </div>
       </section>
 
-      {/* 8. GET IN TOUCH & DIRECT COORDINATION (MERGED CONTACT SECTION) */}
+      {/* 08. GET IN TOUCH & DIRECT COORDINATION (MERGED FULL CONTACT SECTION) */}
       <section
         id="contact"
-        className="bg-[#080808] text-white py-24 sm:py-32 border-b border-white/10 scroll-mt-20"
+        className="w-full bg-[#080808] text-white py-16 xs:py-20 sm:py-28 lg:py-32 border-b border-white/10 scroll-mt-20"
       >
-        <div className="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
-          <ScrollReveal className="max-w-4xl mb-16 sm:mb-20">
-            <span className="text-xs font-mono-tabular font-bold uppercase tracking-[0.22em] text-[#49E619] block mb-4">
+        <div className="w-full max-w-[1360px] 2xl:max-w-[1560px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 xl:px-16">
+          <ScrollReveal className="max-w-4xl mb-12 xs:mb-16 sm:mb-20">
+            <span className="text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-[0.22em] text-[#49E619] block mb-3 sm:mb-4">
               08 · GET IN TOUCH · HYDERABAD, INDIA
             </span>
-            <h2 className="font-display-sans uppercase text-5xl sm:text-6xl lg:text-7xl xl:text-[5.25rem] font-black tracking-[-0.04em] leading-[0.92] text-white">
+            <h2 className="font-display-sans uppercase text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.25rem] font-black tracking-[-0.04em] leading-[0.92] text-white break-words">
               LET&apos;S CREATE
               <br />
               <span className="text-[#49E619]">CHANGE</span> TOGETHER.
             </h2>
-            <p className="mt-6 text-base sm:text-lg text-white/80 max-w-xl leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-sm xs:text-base sm:text-lg text-white/80 max-w-xl leading-relaxed">
               Whether you are looking to partner on a school nutrition drive, volunteer in our morning kitchen, or inquire about institutional grants, our team responds within 24 hours.
             </p>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            {/* LEFT: CONTACT FORM */}
-            <ScrollReveal className="lg:col-span-7 rounded-[20px] bg-[#F2F4F3] text-[#122023] p-7 sm:p-10 lg:p-12 shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start">
+            {/* LEFT: FULL-WIDTH RESPONSIVE CONTACT FORM */}
+            <ScrollReveal className="lg:col-span-7 rounded-[18px] sm:rounded-[22px] bg-[#F2F4F3] text-[#122023] p-5 xs:p-7 sm:p-10 lg:p-12 shadow-2xl">
               {isSubmitted ? (
-                <div className="py-12 text-center">
+                <div className="py-8 sm:py-12 text-center">
                   <div className="w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center bg-[#49E619] text-[#122023]">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
-                  <span className="text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#188D44]">
+                  <span className="text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#188D44]">
                     MESSAGE RECEIVED
                   </span>
-                  <h3 className="font-display-sans uppercase text-3xl font-black text-[#122023] mt-2">
+                  <h3 className="font-display-sans uppercase text-2xl sm:text-3xl font-black text-[#122023] mt-2">
                     Thank you for reaching out, {name}.
                   </h3>
-                  <p className="mt-3 text-sm sm:text-base text-[#122023]/80 max-w-md mx-auto leading-relaxed">
+                  <p className="mt-3 text-xs sm:text-sm md:text-base text-[#122023]/80 max-w-md mx-auto leading-relaxed">
                     We have logged your inquiry regarding <span className="text-[#080808] font-bold">“{subject}”</span> and sent a confirmation copy to {email}. Our Hyderabad coordination desk will reply shortly.
                   </p>
                   <button
@@ -435,18 +440,18 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
                       setPhone('');
                       setMessage('');
                     }}
-                    className="mt-8 px-6 py-3.5 rounded-[10px] bg-[#49E619] text-[#080808] text-xs font-mono-tabular font-bold uppercase tracking-wider hover:bg-[#B9FF2C] transition-colors cursor-pointer"
+                    className="mt-6 sm:mt-8 px-6 py-3.5 rounded-[10px] bg-[#49E619] text-[#080808] text-xs font-mono-tabular font-bold uppercase tracking-wider hover:bg-[#B9FF2C] transition-colors cursor-pointer w-full sm:w-auto"
                   >
                     Send Another Message
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <label
                         htmlFor="contact-name"
-                        className="block text-xs font-mono-tabular font-bold uppercase tracking-wider text-[#122023] mb-2"
+                        className="block text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-wider text-[#122023] mb-1.5 sm:mb-2"
                       >
                         Name *
                       </label>
@@ -457,14 +462,14 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Siddharth Verma"
-                        className="w-full rounded-[10px] px-4 py-3.5 bg-white border border-[#122023]/20 text-sm text-[#080808] focus:outline-none focus:border-[#122023] transition-colors"
+                        className="w-full rounded-[10px] px-3.5 sm:px-4 py-3 sm:py-3.5 bg-white border border-[#122023]/20 text-base sm:text-sm text-[#080808] focus:outline-none focus:border-[#122023] transition-colors"
                       />
                     </div>
 
                     <div>
                       <label
                         htmlFor="contact-email"
-                        className="block text-xs font-mono-tabular font-bold uppercase tracking-wider text-[#122023] mb-2"
+                        className="block text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-wider text-[#122023] mb-1.5 sm:mb-2"
                       >
                         Email *
                       </label>
@@ -475,16 +480,16 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="siddharth@example.org"
-                        className="w-full rounded-[10px] px-4 py-3.5 bg-white border border-[#122023]/20 text-sm text-[#080808] focus:outline-none focus:border-[#122023] transition-colors"
+                        className="w-full rounded-[10px] px-3.5 sm:px-4 py-3 sm:py-3.5 bg-white border border-[#122023]/20 text-base sm:text-sm text-[#080808] focus:outline-none focus:border-[#122023] transition-colors"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <label
                         htmlFor="contact-phone"
-                        className="block text-xs font-mono-tabular font-bold uppercase tracking-wider text-[#122023] mb-2"
+                        className="block text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-wider text-[#122023] mb-1.5 sm:mb-2"
                       >
                         Phone
                       </label>
@@ -494,14 +499,14 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="+91 98480 XXXXX"
-                        className="w-full rounded-[10px] px-4 py-3.5 bg-white border border-[#122023]/20 text-sm text-[#080808] focus:outline-none focus:border-[#122023] transition-colors"
+                        className="w-full rounded-[10px] px-3.5 sm:px-4 py-3 sm:py-3.5 bg-white border border-[#122023]/20 text-base sm:text-sm text-[#080808] focus:outline-none focus:border-[#122023] transition-colors"
                       />
                     </div>
 
                     <div>
                       <label
                         htmlFor="contact-subject"
-                        className="block text-xs font-mono-tabular font-bold uppercase tracking-wider text-[#122023] mb-2"
+                        className="block text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-wider text-[#122023] mb-1.5 sm:mb-2"
                       >
                         Subject *
                       </label>
@@ -509,7 +514,7 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
                         id="contact-subject"
                         value={subject}
                         onChange={(e) => setSubject(e.target.value)}
-                        className="w-full h-[48px] rounded-[10px] px-4 bg-white border border-[#122023]/20 text-sm text-[#080808] focus:outline-none focus:border-[#122023] transition-colors"
+                        className="w-full h-[46px] sm:h-[48px] rounded-[10px] px-3.5 sm:px-4 bg-white border border-[#122023]/20 text-base sm:text-sm text-[#080808] focus:outline-none focus:border-[#122023] transition-colors"
                       >
                         <option value="Sponsor a Community Meal Drive">
                           Sponsor a Community Meal Drive
@@ -533,7 +538,7 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
                   <div>
                     <label
                       htmlFor="contact-message"
-                      className="block text-xs font-mono-tabular font-bold uppercase tracking-wider text-[#122023] mb-2"
+                      className="block text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-wider text-[#122023] mb-1.5 sm:mb-2"
                     >
                       Message *
                     </label>
@@ -544,14 +549,14 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Tell us how you would like to collaborate or support our communities..."
-                      className="w-full rounded-[10px] p-4 bg-white border border-[#122023]/20 text-sm text-[#080808] focus:outline-none focus:border-[#122023] transition-colors resize-y"
+                      className="w-full rounded-[10px] p-3.5 sm:p-4 bg-white border border-[#122023]/20 text-base sm:text-sm text-[#080808] focus:outline-none focus:border-[#122023] transition-colors resize-y"
                     />
                   </div>
 
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-[10px] bg-[#49E619] hover:bg-[#B9FF2C] text-[#080808] text-sm font-bold transition-colors cursor-pointer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-[10px] bg-[#49E619] hover:bg-[#B9FF2C] text-[#080808] text-sm font-bold transition-colors cursor-pointer"
                     >
                       <span>Send Message</span>
                       <ArrowRight className="w-4 h-4" />
@@ -561,23 +566,23 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
               )}
             </ScrollReveal>
 
-            {/* RIGHT: DIRECT CONTACT & SOCIAL CHANNELS */}
-            <ScrollReveal delay={0.14} className="lg:col-span-5 space-y-8">
-              <div className="rounded-[18px] bg-[#122023] p-7 border border-white/12">
-                <span className="text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#49E619] block mb-5">
+            {/* RIGHT: DIRECT COORDINATION DESK & SOCIAL CHANNELS */}
+            <ScrollReveal delay={0.14} className="lg:col-span-5 space-y-6 sm:space-y-8">
+              <div className="rounded-[16px] sm:rounded-[18px] bg-[#122023] p-5 xs:p-7 border border-white/12">
+                <span className="text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#49E619] block mb-4 sm:mb-5">
                   DIRECT COORDINATION DESK
                 </span>
-                <div className="space-y-5">
+                <div className="space-y-4 sm:space-y-5">
                   <a
                     href="mailto:hello@zerohunger.org"
-                    className="flex items-start gap-3.5 group"
+                    className="flex items-start gap-3 sm:gap-3.5 group"
                   >
                     <Mail className="w-5 h-5 text-[#49E619] shrink-0 mt-0.5" />
-                    <div>
-                      <div className="text-xs font-mono-tabular uppercase tracking-wider text-white/60">
+                    <div className="min-w-0">
+                      <div className="text-[11px] xs:text-xs font-mono-tabular uppercase tracking-wider text-white/60">
                         Email
                       </div>
-                      <div className="font-display-sans text-xl font-black text-white group-hover:text-[#49E619] transition-colors">
+                      <div className="font-display-sans text-lg xs:text-xl font-black text-white group-hover:text-[#49E619] transition-colors break-all">
                         hello@zerohunger.org
                       </div>
                     </div>
@@ -585,29 +590,29 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
 
                   <a
                     href="tel:+919848024190"
-                    className="flex items-start gap-3.5 group"
+                    className="flex items-start gap-3 sm:gap-3.5 group"
                   >
                     <Phone className="w-5 h-5 text-[#4EDBE2] shrink-0 mt-0.5" />
                     <div>
-                      <div className="text-xs font-mono-tabular uppercase tracking-wider text-white/60">
+                      <div className="text-[11px] xs:text-xs font-mono-tabular uppercase tracking-wider text-white/60">
                         Phone & Dispatch Helpline
                       </div>
-                      <div className="font-mono-tabular text-lg font-bold text-white group-hover:text-[#4EDBE2] transition-colors">
+                      <div className="font-mono-tabular text-base xs:text-lg font-bold text-white group-hover:text-[#4EDBE2] transition-colors">
                         +91 98480 24190
                       </div>
                     </div>
                   </a>
 
-                  <div className="flex items-start gap-3.5">
+                  <div className="flex items-start gap-3 sm:gap-3.5">
                     <MapPin className="w-5 h-5 text-[#B9FF2C] shrink-0 mt-0.5" />
                     <div>
-                      <div className="text-xs font-mono-tabular uppercase tracking-wider text-white/60">
+                      <div className="text-[11px] xs:text-xs font-mono-tabular uppercase tracking-wider text-white/60">
                         Headquarters & Flagship Kitchen
                       </div>
-                      <div className="text-base font-bold text-white">
+                      <div className="text-sm xs:text-base font-bold text-white">
                         Hyderabad, Telangana, India
                       </div>
-                      <p className="text-xs text-white/70 mt-0.5">
+                      <p className="text-[11px] xs:text-xs text-white/70 mt-0.5">
                         Plot 14, Clock Tower Corridor, Secunderabad 500003
                       </p>
                     </div>
@@ -616,57 +621,57 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
               </div>
 
               {/* Social Channels */}
-              <div className="rounded-[18px] bg-[#122023] p-7 border border-white/12">
-                <span className="text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#4EDBE2] block mb-4">
+              <div className="rounded-[16px] sm:rounded-[18px] bg-[#122023] p-5 xs:p-7 border border-white/12">
+                <span className="text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#4EDBE2] block mb-3 sm:mb-4">
                   FIELD DISPATCHES & SOCIAL MEDIA
                 </span>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
                   <a
                     href="https://instagram.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2.5 p-3.5 rounded-[10px] bg-[#080808] border border-white/12 hover:border-[#49E619] transition-colors text-sm font-bold text-white"
+                    className="flex items-center gap-2 p-3 sm:p-3.5 rounded-[10px] bg-[#080808] border border-white/12 hover:border-[#49E619] transition-colors text-xs sm:text-sm font-bold text-white"
                   >
-                    <Instagram className="w-4 h-4 text-[#49E619]" />
+                    <Instagram className="w-4 h-4 text-[#49E619] shrink-0" />
                     <span>Instagram</span>
                   </a>
                   <a
                     href="https://facebook.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2.5 p-3.5 rounded-[10px] bg-[#080808] border border-white/12 hover:border-[#4EDBE2] transition-colors text-sm font-bold text-white"
+                    className="flex items-center gap-2 p-3 sm:p-3.5 rounded-[10px] bg-[#080808] border border-white/12 hover:border-[#4EDBE2] transition-colors text-xs sm:text-sm font-bold text-white"
                   >
-                    <Facebook className="w-4 h-4 text-[#4EDBE2]" />
+                    <Facebook className="w-4 h-4 text-[#4EDBE2] shrink-0" />
                     <span>Facebook</span>
                   </a>
                   <a
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2.5 p-3.5 rounded-[10px] bg-[#080808] border border-white/12 hover:border-[#B9FF2C] transition-colors text-sm font-bold text-white"
+                    className="flex items-center gap-2 p-3 sm:p-3.5 rounded-[10px] bg-[#080808] border border-white/12 hover:border-[#B9FF2C] transition-colors text-xs sm:text-sm font-bold text-white"
                   >
-                    <Linkedin className="w-4 h-4 text-[#B9FF2C]" />
+                    <Linkedin className="w-4 h-4 text-[#B9FF2C] shrink-0" />
                     <span>LinkedIn</span>
                   </a>
                   <a
                     href="https://youtube.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2.5 p-3.5 rounded-[10px] bg-[#080808] border border-white/12 hover:border-[#49E619] transition-colors text-sm font-bold text-white"
+                    className="flex items-center gap-2 p-3 sm:p-3.5 rounded-[10px] bg-[#080808] border border-white/12 hover:border-[#49E619] transition-colors text-xs sm:text-sm font-bold text-white"
                   >
-                    <Youtube className="w-4 h-4 text-[#49E619]" />
+                    <Youtube className="w-4 h-4 text-[#49E619] shrink-0" />
                     <span>YouTube</span>
                   </a>
                 </div>
               </div>
 
-              {/* Morning Kitchen Visitor Note */}
-              <div className="p-6 rounded-[18px] bg-[#B9FF2C] text-[#122023]">
-                <div className="flex items-center gap-2 text-xs font-mono-tabular font-bold uppercase tracking-wider text-[#122023]">
-                  <Clock className="w-4 h-4" />
+              {/* Open Kitchen Policy Note */}
+              <div className="p-5 xs:p-6 rounded-[16px] sm:rounded-[18px] bg-[#B9FF2C] text-[#122023]">
+                <div className="flex items-center gap-2 text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-wider text-[#122023]">
+                  <Clock className="w-4 h-4 shrink-0" />
                   <span>OPEN KITCHEN POLICY</span>
                 </div>
-                <p className="mt-2 text-sm text-[#122023] font-medium leading-relaxed">
+                <p className="mt-2 text-xs xs:text-sm text-[#122023] font-medium leading-relaxed">
                   Donors, teachers, and citizens are welcome to visit our Secunderabad Community Kitchen any morning between 6:00 AM and 9:00 AM to witness meal preparation firsthand.
                 </p>
               </div>
@@ -675,26 +680,26 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
         </div>
       </section>
 
-      {/* 9. OPERATIONAL COORDINATES & FIELD HUBS */}
-      <section className="bg-[#122023] py-20 sm:py-28 border-t border-white/10">
-        <div className="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      {/* 09. OPERATIONAL COORDINATES & FIELD HUBS — 100% FLUID RESPONSIVE MAP */}
+      <section className="w-full bg-[#122023] py-16 xs:py-20 sm:py-28 border-t border-white/10">
+        <div className="w-full max-w-[1360px] 2xl:max-w-[1560px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 xl:px-16">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
             <div>
-              <span className="text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#49E619] block mb-2">
+              <span className="text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-[0.2em] text-[#49E619] block mb-2">
                 09 · OPERATIONAL COORDINATES · TELANGANA
               </span>
-              <h2 className="font-display-sans uppercase text-3xl sm:text-5xl font-black text-white">
+              <h2 className="font-display-sans uppercase text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black text-white break-words">
                 Our Field Hubs & Kitchens
               </h2>
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 w-full sm:w-auto">
               {HUBS.map((hub) => (
                 <button
                   key={hub.id}
                   type="button"
                   onClick={() => setSelectedHub(hub)}
-                  className={`px-4 py-2.5 rounded-[8px] text-xs font-mono-tabular font-bold uppercase tracking-wider transition-colors cursor-pointer ${
+                  className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-[8px] text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-wider transition-colors cursor-pointer ${
                     selectedHub.id === hub.id
                       ? 'bg-[#49E619] text-[#080808]'
                       : 'bg-[#080808] text-white border border-white/15 hover:border-[#49E619]'
@@ -707,9 +712,9 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
           </div>
 
           {/* Minimalist Architectural Cartographic Map Canvas */}
-          <div className="relative rounded-[20px] bg-[#080808] text-white border border-white/15 overflow-hidden min-h-[380px] sm:min-h-[440px] grid grid-cols-1 lg:grid-cols-12 shadow-2xl">
+          <div className="relative rounded-[18px] sm:rounded-[22px] bg-[#080808] text-white border border-white/15 overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-2xl">
             {/* Cartographic SVG Grid Background */}
-            <div className="lg:col-span-8 relative p-8 sm:p-12 flex flex-col justify-between min-h-[300px]">
+            <div className="lg:col-span-7 xl:col-span-8 relative p-5 xs:p-7 sm:p-10 lg:p-12 flex flex-col justify-between min-h-[300px] sm:min-h-[380px]">
               <svg
                 className="pointer-events-none absolute inset-0 w-full h-full opacity-20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -742,73 +747,73 @@ export const About: React.FC<AboutProps> = ({ onOpenSupport }) => {
                 <circle cx="42%" cy="48%" r="96" fill="none" stroke="#4EDBE2" strokeWidth="0.6" strokeDasharray="4 4" />
               </svg>
 
-              <div className="relative z-10 flex items-center justify-between">
-                <span className="text-xs font-mono-tabular uppercase tracking-widest text-white/70">
-                  CARTOGRAPHIC SECTOR · HYDERABAD METROPOLITAN & RURAL CORRIDOR
+              <div className="relative z-10 flex flex-col xs:flex-row xs:items-center justify-between gap-1.5 xs:gap-4">
+                <span className="text-[10px] xs:text-xs font-mono-tabular uppercase tracking-widest text-white/70">
+                  CARTOGRAPHIC SECTOR · HYDERABAD CORRIDOR
                 </span>
-                <span className="text-xs font-mono-tabular font-bold text-[#B9FF2C]">
+                <span className="text-[11px] xs:text-xs font-mono-tabular font-bold text-[#B9FF2C]">
                   {selectedHub.coordinates}
                 </span>
               </div>
 
               {/* Interactive Pin Marker Visual */}
-              <div className="relative z-10 my-auto py-8 flex items-center justify-center">
-                <div className="flex items-center gap-4 rounded-[12px] bg-[#122023] border border-[#49E619]/40 px-5 py-3.5 shadow-2xl">
-                  <span className="relative flex h-3 w-3">
+              <div className="relative z-10 my-6 sm:my-auto py-4 sm:py-8 flex items-center justify-center">
+                <div className="flex items-center gap-3 sm:gap-4 rounded-[12px] bg-[#122023] border border-[#49E619]/40 px-4 sm:px-5 py-3 sm:py-3.5 shadow-2xl max-w-full">
+                  <span className="relative flex h-3 w-3 shrink-0">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#49E619] opacity-75" />
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-[#49E619]" />
                   </span>
-                  <div>
-                    <div className="text-xs font-mono-tabular text-white font-bold">
+                  <div className="min-w-0">
+                    <div className="text-[11px] xs:text-xs font-mono-tabular text-white font-bold truncate">
                       {selectedHub.name}
                     </div>
-                    <div className="text-[11px] text-white/70">
+                    <div className="text-[10px] xs:text-[11px] text-white/70 truncate">
                       {selectedHub.role}
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 text-[11px] font-mono-tabular text-white/60">
+              <div className="relative z-10 flex flex-col xs:flex-row xs:items-center justify-between gap-1.5 xs:gap-4 text-[10px] xs:text-[11px] font-mono-tabular text-white/60">
                 <span>28 ACTIVE COMMUNITIES MAPPED</span>
                 <span>SCALE: 1 : 25,000 · TELANGANA</span>
               </div>
             </div>
 
             {/* Hub Details Panel */}
-            <div className="lg:col-span-4 bg-[#122023] border-t lg:border-t-0 lg:border-l border-white/10 p-8 sm:p-10 flex flex-col justify-between">
+            <div className="lg:col-span-5 xl:col-span-4 bg-[#122023] border-t lg:border-t-0 lg:border-l border-white/10 p-5 xs:p-7 sm:p-8 lg:p-10 flex flex-col justify-between">
               <div>
-                <span className="text-xs font-mono-tabular font-bold uppercase tracking-widest text-[#49E619]">
+                <span className="text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-widest text-[#49E619]">
                   SELECTED DISPATCH HUB
                 </span>
-                <h3 className="mt-2 font-display-sans uppercase text-2xl font-black text-white">
+                <h3 className="mt-1.5 sm:mt-2 font-display-sans uppercase text-xl xs:text-2xl font-black text-white leading-tight">
                   {selectedHub.name}
                 </h3>
-                <p className="mt-4 text-sm text-white/80 leading-relaxed">
+                <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-white/80 leading-relaxed">
                   {selectedHub.address}
                 </p>
 
-                <div className="mt-6 pt-6 border-t border-white/10 space-y-3 text-xs">
+                <div className="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-white/10 space-y-3 text-xs">
                   <div>
-                    <span className="text-white/60 font-mono-tabular uppercase block">
+                    <span className="text-white/60 font-mono-tabular uppercase block text-[11px]">
                       Operating Hours
                     </span>
-                    <span className="font-mono-tabular text-[#B9FF2C] font-bold mt-0.5 block">
+                    <span className="font-mono-tabular text-[#B9FF2C] font-bold mt-0.5 block text-xs sm:text-sm">
                       {selectedHub.hours}
                     </span>
                   </div>
                   <div>
-                    <span className="text-white/60 font-mono-tabular uppercase block">
+                    <span className="text-white/60 font-mono-tabular uppercase block text-[11px]">
                       Primary Function
                     </span>
-                    <span className="text-white font-medium mt-0.5 block">
+                    <span className="text-white font-medium mt-0.5 block text-xs sm:text-sm">
                       {selectedHub.role}
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-white/10 text-xs font-mono-tabular text-[#4EDBE2]">
+              <div className="mt-6 sm:mt-8 pt-3.5 sm:pt-4 border-t border-white/10 text-[11px] xs:text-xs font-mono-tabular text-[#4EDBE2]">
                 GPS: {selectedHub.coordinates}
               </div>
             </div>
