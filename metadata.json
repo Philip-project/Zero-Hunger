@@ -1,0 +1,6 @@
+{
+  "name": "Zero Hunger Initiative — Humanitarian Food Relief & Community Nutrition",
+  "description": "Creating a world where no one sleeps hungry. Zero Hunger delivers daily nutritious meals, school nutrition programs, and sustainable food relief across communities in India.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
