@@ -16,8 +16,7 @@ const NAV_ITEMS = [
   { label: 'Track Meal', path: '/track-meal', hideOnCompact: false },
   { label: 'Projects & Impact', path: '/projects', hideOnCompact: false },
   { label: 'CSR & Tax', path: '/csr-tax-benefits', hideOnCompact: false },
-  { label: 'About', path: '/about', hideOnCompact: true },
-  { label: 'Contact', path: '/contact', hideOnCompact: true },
+  { label: 'About Us', path: '/about', hideOnCompact: true },
 ];
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenSupport }) => {

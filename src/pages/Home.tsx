@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { Hero } from '../components/Hero';
 import { ImpactStats } from '../components/ImpactStats';
@@ -163,6 +162,8 @@ export const Home: React.FC<HomeProps> = ({ onOpenSupport }) => {
 
       {/* SECTION 5.8 — COMMUNITY DRIVES: CELEBRATE OCCASIONS, CLOTH DONATIONS, FOOD RESCUE & CSR */}
       <CommunityDrivesShowcase />
+
+
 
       {/* SECTION 6 — CALL TO ACTION */}
       <CTASection onOpenSupport={onOpenSupport} />

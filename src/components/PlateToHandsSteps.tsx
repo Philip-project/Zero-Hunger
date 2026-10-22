@@ -1,24 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
 
-interface StepCardItem {
+interface StepCard {
   number: string;
-  titleLines: [string, string];
+  titleLines: string[];
   description: string;
   bgClass: string;
-  href: string;
+  textClass: string;
+  numeralClass: string;
 }
 
-const STEPS: StepCardItem[] = [
+const STEPS: StepCard[] = [
   {
     number: '1',
     titleLines: ['CHOOSE YOUR', '₹150 MEAL BOX'],
     description:
       'Select any freshly prepared ₹150 Protein, Veg, or Kids nutrition box from our daily Hyderabad kitchen menu.',
     bgClass: 'bg-[#49E619]',
-    href: '/meal-box',
+    textClass: 'text-[#122023]',
+    numeralClass: 'text-[#122023]',
   },
   {
     number: '2',
@@ -26,7 +26,8 @@ const STEPS: StepCardItem[] = [
     description:
       'Pay only ₹150 for your own meal. Our Buy 1, Give 1 program automatically funds a second hot meal for a child at ₹0 extra cost.',
     bgClass: 'bg-[#4EDBE2]',
-    href: '/meal-box',
+    textClass: 'text-[#122023]',
+    numeralClass: 'text-[#122023]',
   },
   {
     number: '3',
@@ -34,15 +35,17 @@ const STEPS: StepCardItem[] = [
     description:
       'Our backend generates a unique Charity Token (e.g. ZH-2026-A8F42K) linking your purchase to a sponsored child meal.',
     bgClass: 'bg-[#B9FF2C]',
-    href: '/track-meal?token=ZH-2026-A8F42K',
+    textClass: 'text-[#122023]',
+    numeralClass: 'text-[#122023]',
   },
   {
     number: '4',
     titleLines: ['COOKED FRESH', 'IN OUR KITCHEN'],
     description:
-      'Your meal is dispatched hot to your doorstep while the child’s balanced meal is prepared in thermal-sealed community batches.',
+      "Your meal is dispatched hot to your doorstep while the child's balanced meal is prepared in thermal-sealed community batches.",
     bgClass: 'bg-[#188D44]',
-    href: '/track-meal?token=ZH-2026-A8F42K',
+    textClass: 'text-[#122023]',
+    numeralClass: 'text-[#122023]',
   },
   {
     number: '5',
@@ -50,7 +53,8 @@ const STEPS: StepCardItem[] = [
     description:
       'The sponsored meal is routed to a Hyderabad community center and paired with an anonymized Beneficiary ID (ZH-10482).',
     bgClass: 'bg-[#F2F4F3]',
-    href: '/track-meal?token=ZH-2026-A8F42K',
+    textClass: 'text-[#122023]',
+    numeralClass: 'text-[#122023]',
   },
   {
     number: '6',
@@ -58,116 +62,70 @@ const STEPS: StepCardItem[] = [
     description:
       'Once served, our field team marks the token delivered, uploads a safeguarding-cleared photo, and sends your impact notification.',
     bgClass: 'bg-[#49E619]',
-    href: '/track-meal?token=ZH-2026-A8F42K',
+    textClass: 'text-[#122023]',
+    numeralClass: 'text-[#122023]',
   },
 ];
 
-/**
- * 18-Point Geometric Starburst SVG matching the reference header icon
- */
-const StarburstBadge: React.FC<{ className?: string }> = ({ className }) => {
-  const points = 18;
-  const outerRadius = 24;
-  const innerRadius = 17.5;
-  const center = 24;
-  const coords: string[] = [];
-
-  for (let i = 0; i < points * 2; i++) {
-    const angle = (i * Math.PI) / points - Math.PI / 2;
-    const r = i % 2 === 0 ? outerRadius : innerRadius;
-    const x = center + r * Math.cos(angle);
-    const y = center + r * Math.sin(angle);
-    coords.push(`${x.toFixed(2)},${y.toFixed(2)}`);
-  }
-
-  return (
-    <svg
-      viewBox="0 0 48 48"
-      fill="currentColor"
-      className={className}
-      aria-hidden="true"
-    >
-      <polygon points={coords.join(' ')} />
-    </svg>
-  );
-};
-
 export const PlateToHandsSteps: React.FC = () => {
   return (
-    <div className="bg-[#122023] text-white rounded-2xl sm:rounded-[24px] px-4 sm:px-10 lg:px-14 py-12 sm:py-20 lg:py-22 shadow-2xl overflow-hidden">
-      {/* =====================================================================
-          TOP HEADER ROW: LEFT CONDENSED DISPLAY TITLE + RIGHT STARBURST & COPY
-      ====================================================================== */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start mb-10 sm:mb-16">
-        {/* Left 7 Columns: Eyebrow + Condensed Uppercase Headline */}
-        <ScrollReveal className="lg:col-span-7">
-          <span className="text-xs sm:text-sm font-medium text-[#49E619] tracking-tight block mb-3">
-            From your plate to a child’s hands
-          </span>
+    <div className="w-full">
+      {/* Section Heading */}
+      <ScrollReveal>
+        <div className="max-w-3xl mb-8 sm:mb-12">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="w-2 h-2 rounded-full bg-[#49E619] animate-pulse" />
+            <span className="text-[11px] xs:text-xs font-mono-tabular font-bold uppercase tracking-[0.22em] text-[#49E619]">
+              HOW YOUR MEAL CREATES IMPACT · 6-STAGE TOKEN TRAIL
+            </span>
+          </div>
 
-          <h3 className="font-display-sans uppercase text-white text-3xl sm:text-5xl md:text-6xl lg:text-[68px] font-black leading-[0.92] tracking-[-0.045em]">
-            HOW YOUR MEAL
-            <br />
-            CREATES IMPACT
-          </h3>
-        </ScrollReveal>
+          <h2 className="font-display-sans uppercase text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.94] text-white break-words">
+            FROM YOUR PLATE TO <br />
+            <span className="text-[#49E619]">A CHILD&apos;S HANDS</span>
+          </h2>
 
-        {/* Right 5 Columns: White Starburst Icon + Editorial Explanation */}
-        <ScrollReveal
-          delay={0.1}
-          className="lg:col-span-5 lg:pl-6 flex flex-col items-start"
-        >
-          <StarburstBadge className="w-10 h-10 sm:w-12 sm:h-12 text-white mb-4 sm:mb-5 shrink-0" />
-
-          <p className="text-xs sm:text-sm md:text-[15px] text-white/90 leading-relaxed max-w-md font-normal">
-            Wherever you are in Hyderabad, every ₹150 meal box gives your
-            purchase a clear path forward — nourishing you today while our
-            community kitchen prepares, dispatches, and verifies a hot meal for
-            a child in need.
+          <p className="mt-4 text-xs xs:text-sm sm:text-base text-white/75 leading-relaxed max-w-2xl font-medium">
+            Follow your meal’s journey from checkout to a child’s hands. Every step
+            is connected, geotagged, and backed by a 100% verifiable impact token trail.
           </p>
+        </div>
+      </ScrollReveal>
 
-          <Link
-            to="/track-meal?token=ZH-2026-A8F42K"
-            className="mt-4 inline-flex items-center gap-1.5 text-xs font-mono-tabular uppercase tracking-widest text-[#49E619] hover:text-white transition-colors"
-          >
-            <span>Inspect Live Token (ZH-2026-A8F42K)</span>
-            <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
-          </Link>
-        </ScrollReveal>
-      </div>
-
-      {/* =====================================================================
-          2×3 BENTO GRID OF OVERSIZED NUMBERED CARDS (1 TO 6)
-      ====================================================================== */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3">
-        {STEPS.map((step, index) => (
-          <ScrollReveal key={step.number} delay={0.05 * index}>
-            <Link
-              to={step.href}
-              className={`${step.bgClass} group relative rounded-[14px] sm:rounded-[16px] min-h-[190px] sm:min-h-[240px] lg:min-h-[265px] overflow-hidden grid grid-cols-12 items-center transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white`}
+      {/* 2-Column Bold Numbered Cards Grid Matching Reference Design */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
+        {STEPS.map((step, idx) => (
+          <ScrollReveal key={step.number} delay={0.05 * idx}>
+            <div
+              className={`rounded-[20px] sm:rounded-[26px] ${step.bgClass} ${step.textClass} p-5 xs:p-6 sm:p-7 lg:p-8 h-full flex items-center gap-4 xs:gap-6 sm:gap-7 lg:gap-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5`}
             >
-              {/* Left Column: Oversized Cropped Numeral (1–6) */}
-              <div className="col-span-4 sm:col-span-5 h-full flex items-end pl-2 sm:pl-5 lg:pl-6 pt-6 pointer-events-none select-none overflow-hidden">
-                <span className="font-display-sans font-black text-[#122023] text-[120px] sm:text-[185px] md:text-[165px] lg:text-[225px] leading-[0.74] tracking-[-0.06em] -mb-2 sm:-mb-4 block">
-                  {step.number}
-                </span>
+              {/* Giant Bold Numeral on the Left */}
+              <div
+                className={`font-display-sans font-black text-6xl xs:text-7xl sm:text-8xl lg:text-9xl leading-none shrink-0 select-none tracking-tight ${step.numeralClass}`}
+              >
+                {step.number}
               </div>
 
-              {/* Right Column: Bold Condensed Uppercase Heading + Description */}
-              <div className="col-span-8 sm:col-span-7 pr-4 sm:pr-7 lg:pr-10 py-5 sm:py-8 flex flex-col justify-center">
-                <h4 className="font-display-sans uppercase text-[#122023] text-lg sm:text-2xl md:text-xl lg:text-[28px] font-black leading-[0.94] tracking-[-0.035em]">
-                  <span className="block">{step.titleLines[0]}</span>
-                  <span className="block">{step.titleLines[1]}</span>
-                </h4>
+              {/* Title & Description Stack on the Right */}
+              <div className="flex-1 flex flex-col justify-center min-w-0">
+                <h3 className="font-display-sans uppercase font-black text-lg xs:text-xl sm:text-2xl lg:text-[26px] leading-[1.02] tracking-tight">
+                  {step.titleLines.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </h3>
 
-                <p className="mt-2.5 sm:mt-4 text-xs sm:text-[13px] text-[#122023]/85 font-medium leading-[1.45] max-w-[270px]">
+                <p className="mt-2 sm:mt-2.5 text-xs sm:text-[13px] lg:text-sm leading-relaxed font-medium opacity-90">
                   {step.description}
                 </p>
               </div>
-            </Link>
+            </div>
           </ScrollReveal>
         ))}
       </div>
     </div>
   );
 };
+
+export default PlateToHandsSteps;

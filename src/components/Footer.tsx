@@ -16,11 +16,11 @@ const EXPLORE_LINKS = [
   { label: 'Buy 1 Give 1 Meal Box', path: '/meal-box' },
   { label: 'Celebrate Birthdays & Anniversaries', path: '/celebrate-and-give' },
   { label: 'Donate Clothes & Rescue Food', path: '/celebrate-and-give?tab=CLOTH_DONATION' },
-  { label: 'CSR & 80G Tax Benefits', path: '/csr-tax-benefits' },
+  { label: 'CSR & Tax Benefits', path: '/csr-tax-benefits' },
   { label: 'Track Sponsored Meal', path: '/track-meal' },
   { label: 'Projects & Impact', path: '/projects' },
-  { label: 'About', path: '/about' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'About Us', path: '/about' },
+  { label: 'Contact & Field Hubs', path: '/about#contact' },
 ];
 
 const SOCIAL_LINKS = [

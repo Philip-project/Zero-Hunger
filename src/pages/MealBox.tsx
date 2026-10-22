@@ -11,6 +11,7 @@ import {
   Plus,
   ShoppingBag,
   ShieldCheck,
+  Sparkles,
   Ticket,
   Trash2,
   Utensils,
@@ -177,21 +178,33 @@ export const MealBox: React.FC = () => {
 
                   <div className="mt-6 space-y-4">
                     {/* Stream 1: Customer's Purchased Meal */}
-                    <div className="rounded-[12px] bg-[#F2F4F3] text-[#122023] p-4 flex items-start justify-between gap-4">
-                      <div>
-                        <span className="text-[10px] font-mono-tabular font-bold uppercase tracking-widest text-[#188D44] block">
-                          MEAL 01 · FOR YOU
-                        </span>
-                        <h3 className="font-display-sans uppercase text-lg font-black text-[#122023] mt-0.5">
-                          Your Purchased Meal Box
-                        </h3>
-                        <p className="text-xs text-[#122023]/80 mt-1">
-                          Freshly prepared in our Secunderabad kitchen and delivered hot to your doorstep.
-                        </p>
+                    <div className="rounded-[16px] bg-[#F2F4F3] text-[#122023] p-4 sm:p-5 border border-[#122023]/15 overflow-hidden group hover:border-[#188D44] transition-all shadow-sm">
+                      <div className="flex flex-col sm:flex-row items-center gap-4">
+                        <div className="w-24 h-24 sm:w-28 sm:h-28 shrink-0 rounded-[14px] bg-white border border-[#122023]/10 overflow-hidden p-1 shadow-xs flex items-center justify-center">
+                          <img
+                            src="/src/assets/images/courier_delivery_1791145501426.jpg"
+                            alt="Zero Hunger ₹150 Meal Box Electric Scooter Delivery Courier"
+                            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
+                        <div className="flex-1 text-left w-full">
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="text-[10px] font-mono-tabular font-bold uppercase tracking-widest text-[#188D44] block">
+                              MEAL 01 · FOR YOU
+                            </span>
+                            <span className="font-mono-tabular text-xl font-black text-[#122023] shrink-0">
+                              ₹150
+                            </span>
+                          </div>
+                          <h3 className="font-display-sans uppercase text-lg sm:text-xl font-black text-[#122023] mt-0.5">
+                            Choose Your ₹150 Meal Box
+                          </h3>
+                          <p className="text-xs text-[#122023]/80 mt-1 leading-relaxed">
+                            Freshly prepared in our Secunderabad kitchen and delivered hot via electric scooter directly to your doorstep.
+                          </p>
+                        </div>
                       </div>
-                      <span className="font-mono-tabular text-lg font-bold text-[#122023] shrink-0">
-                        ₹150
-                      </span>
                     </div>
 
                     {/* Stream 2: Sponsored Child Meal */}
@@ -239,13 +252,13 @@ export const MealBox: React.FC = () => {
       <section id="meal-box-catalog" className="bg-[#122023] py-18 sm:py-24">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
           {/* Category Filter Tabs */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 mb-12 border-b border-white/12">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 mb-8 border-b border-white/12">
             <div>
               <span className="text-xs font-mono-tabular font-bold uppercase tracking-widest text-[#49E619] block mb-1">
                 DAILY KITCHEN MENU · ALL MEALS ₹150
               </span>
               <h2 className="font-display-sans uppercase text-3xl sm:text-4xl font-black text-white">
-                Select Your Nutritious Meal Box
+                Choose Your ₹150 Meal Box
               </h2>
             </div>
 
@@ -273,6 +286,51 @@ export const MealBox: React.FC = () => {
                   </button>
                 );
               })}
+            </div>
+          </div>
+
+          {/* Featured Spotlight: Choose Your ₹150 Meal Box Delivery Tile */}
+          <div className="mb-10 rounded-[20px] bg-gradient-to-r from-[#080808] via-[#122023] to-[#080808] border border-[#49E619]/40 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden group">
+            <div className="flex flex-col sm:flex-row items-center gap-6 z-10 text-center sm:text-left">
+              <div className="w-28 h-28 sm:w-36 sm:h-36 shrink-0 rounded-[18px] bg-white border-2 border-[#49E619] overflow-hidden p-2 shadow-xl flex items-center justify-center">
+                <img
+                  src="/src/assets/images/courier_delivery_1791145501426.jpg"
+                  alt="Zero Hunger Delivery Courier on Electric Scooter"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="max-w-xl">
+                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-[4px] bg-[#49E619] text-[#080808] font-mono-tabular text-[10px] font-bold uppercase tracking-widest mb-2">
+                  <Sparkles className="w-3 h-3" />
+                  <span>ELECTRIC SCOOTER DISPATCH · ZERO HUNGER FLEET</span>
+                </div>
+                <h3 className="font-display-sans uppercase text-2xl sm:text-3xl font-black text-white leading-tight">
+                  Choose Your ₹150 Meal Box
+                </h3>
+                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed">
+                  Every order is freshly prepared in Secunderabad and dispatched directly to your doorstep on our electric courier fleet. Every ₹150 meal ordered automatically funds and dispatches a second hot meal for a child in need.
+                </p>
+                <div className="mt-3 flex flex-wrap items-center justify-center sm:justify-start gap-3 text-xs font-mono-tabular text-[#4EDBE2]">
+                  <span>⚡ 45-Min Hot Delivery</span>
+                  <span>•</span>
+                  <span>🌱 100% Eco-Thermal Packaging</span>
+                  <span>•</span>
+                  <span className="text-[#B9FF2C] font-bold">❤️ 1 Purchase = 2 Meals</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="shrink-0 z-10 text-center md:text-right">
+              <span className="font-mono-tabular text-3xl sm:text-4xl font-black text-[#B9FF2C] block">
+                ₹150
+              </span>
+              <span className="text-[11px] font-mono-tabular text-white/70 block uppercase tracking-wider mt-0.5">
+                All Inclusive · Buy 1 Give 1
+              </span>
+              <div className="mt-2 text-[10px] font-mono-tabular font-bold text-[#49E619] uppercase tracking-wider">
+                ✓ Free Doorstep Delivery
+              </div>
             </div>
           </div>
 
@@ -477,9 +535,24 @@ export const MealBox: React.FC = () => {
                             ₹{confirmedOrder.totalAmountInr}
                           </span>
                         </div>
-                        <span className="mt-1 inline-block text-[11px] text-[#188D44] font-semibold">
-                          Status: Kitchen Preparing for {confirmedOrder.deliveryAddress}
-                        </span>
+                        <div className="mt-2 pt-2 border-t border-[#122023]/10 flex items-center gap-2.5">
+                          <div className="w-10 h-10 rounded-[8px] bg-[#F2F4F3] p-0.5 shrink-0 overflow-hidden border border-[#122023]/10">
+                            <img
+                              src="/src/assets/images/courier_delivery_1791145501426.jpg"
+                              alt="Zero Hunger Courier"
+                              className="w-full h-full object-contain"
+                              referrerPolicy="no-referrer"
+                            />
+                          </div>
+                          <div>
+                            <span className="text-[10px] font-mono-tabular font-bold uppercase text-[#188D44] block">
+                              ELECTRIC SCOOTER DISPATCH EN ROUTE
+                            </span>
+                            <span className="text-[11px] text-[#122023]/80">
+                              Dispatched hot from Secunderabad Hub to {confirmedOrder.deliveryAddress}
+                            </span>
+                          </div>
+                        </div>
                       </div>
 
                       <div className="rounded-[10px] bg-[#B9FF2C] p-3 border border-[#122023]/15">
@@ -544,19 +617,25 @@ export const MealBox: React.FC = () => {
                     </div>
 
                     {cart.length === 0 ? (
-                      <div className="py-12 text-center">
-                        <Utensils className="w-8 h-8 text-[#122023]/40 mx-auto mb-3 stroke-[1.5]" />
+                      <div className="py-8 text-center">
+                        <div className="w-24 h-24 mx-auto mb-3 rounded-[14px] bg-white border border-[#122023]/10 overflow-hidden p-1.5 shadow-sm flex items-center justify-center">
+                          <img
+                            src="/src/assets/images/courier_delivery_1791145501426.jpg"
+                            alt="Zero Hunger Delivery Courier"
+                            className="w-full h-full object-contain"
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
                         <p className="font-display-sans uppercase text-xl font-black text-[#122023]">
-                          Your meal box is empty
+                          Choose Your ₹150 Meal Box
                         </p>
-                        <p className="text-xs text-[#122023]/70 mt-1.5 max-w-xs mx-auto leading-relaxed">
-                          Add any ₹150 meal box from the menu to nourish yourself
-                          and sponsor a linked hot meal for a child.
+                        <p className="text-xs text-[#122023]/70 mt-1 max-w-xs mx-auto leading-relaxed">
+                          Add any ₹150 meal box from the menu. Our courier will dispatch it hot while your linked meal feeds a child.
                         </p>
                         <button
                           type="button"
                           onClick={() => addToCart(MEAL_PRODUCTS[0])}
-                          className="mt-5 px-5 py-3 rounded-[10px] bg-[#49E619] hover:bg-[#B9FF2C] text-[#080808] font-mono-tabular text-[11px] font-bold uppercase tracking-widest transition-colors cursor-pointer"
+                          className="mt-4 px-5 py-3 rounded-[10px] bg-[#49E619] hover:bg-[#B9FF2C] text-[#080808] font-mono-tabular text-[11px] font-bold uppercase tracking-widest transition-colors cursor-pointer"
                         >
                           + Quick Add Protein Power Meal (₹150)
                         </button>

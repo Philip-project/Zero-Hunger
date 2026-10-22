@@ -5,6 +5,7 @@ export const MEAL_IMAGES = {
   nutritiousVeg: '/src/assets/images/meal_nutritious_veg_1790675909708.jpg',
   chickenProtein: '/src/assets/images/meal_chicken_protein_1790675922899.jpg',
   kidsNutrition: '/src/assets/images/meal_kids_nutrition_1790675937269.jpg',
+  trackMealDelivery: '/src/assets/images/track_meal_delivery_1791400616620.jpg',
 };
 
 // ============================================================================
@@ -459,6 +460,11 @@ export const CONSENTED_DELIVERY_PHOTOS = [
     id: 'proof-03',
     label: 'Secunderabad Community Kitchen — Fresh Thali Dispatch',
     url: IMAGES.communityKitchen,
+  },
+  {
+    id: 'proof-04',
+    label: 'Kitchen Dispatch Counter — Courier Meal Ready Handoff',
+    url: '/src/assets/images/track_meal_delivery_1791400616620.jpg',
   },
 ];
 

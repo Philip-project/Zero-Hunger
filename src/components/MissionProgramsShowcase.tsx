@@ -277,7 +277,7 @@ export const MissionProgramsShowcase: React.FC<
                 </button>
               ) : (
                 <Link
-                  to="/contact"
+                  to="/about#contact"
                   className="group inline-flex items-center gap-3.5"
                 >
                   <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#122023] text-white flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
