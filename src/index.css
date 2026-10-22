@@ -17,6 +17,25 @@
   --color-brand-cyan: #4EDBE2;
   --color-brand-emerald: #188D44;
   --color-brand-gray: #6F6F6F;
+
+  --animate-ripple: ripple 8s ease-in-out infinite;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+@utility animate-ripple {
+  animation: ripple 8s ease-in-out infinite;
+  will-change: transform;
 }
 
 @layer base {

@@ -21,49 +21,56 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({
   return (
     <section
       id="impact-section"
-      className="bg-[#122023] text-white py-20 sm:py-28 lg:py-32 border-b border-white/10"
+      className="bg-[#122023] text-white pt-5 sm:pt-6 lg:pt-8 pb-8 sm:pb-10 lg:pb-12 border-b border-white/10"
     >
       <div className="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
-        {/* Editorial Heading & Supporting Prose */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end pb-12 sm:pb-16">
-          <div className="lg:col-span-7">
-            <ScrollReveal>
-              <span className="text-xs font-mono-tabular font-bold uppercase tracking-[0.22em] text-[#49E619] block mb-3">
-                VERIFIED HUMANITARIAN LEDGER
-              </span>
-              <h2 className="font-display-sans uppercase text-4xl sm:text-5xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.94] text-white">
-                SMALL ACTIONS.
-                <br />
-                <span className="text-[#49E619]">REAL IMPACT.</span>
-              </h2>
-            </ScrollReveal>
-          </div>
-
-          <div className="lg:col-span-5">
-            <ScrollReveal delay={0.12}>
-              <p className="text-sm sm:text-base text-white/80 leading-relaxed">
-                Every meal creates more than nourishment.
-                <br className="hidden sm:inline" /> It creates dignity, hope and possibility.
-              </p>
-            </ScrollReveal>
-          </div>
+        {/* Centered Editorial Heading */}
+        <div className="text-center max-w-2xl mx-auto pb-10 sm:pb-12">
+          <ScrollReveal>
+            <span className="text-xs font-mono-tabular font-bold uppercase tracking-[0.22em] text-[#49E619] block mb-3">
+              VERIFIED HUMANITARIAN LEDGER
+            </span>
+            <h2 className="font-display-sans uppercase text-3xl sm:text-4xl lg:text-5xl font-black tracking-[-0.04em] leading-[0.94] text-white">
+              SMALL ACTIONS.
+              <br />
+              <span className="text-[#49E619]">REAL IMPACT.</span>
+            </h2>
+          </ScrollReveal>
         </div>
 
         {/* Three Color-Blocked Impact Metric Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 max-w-[1200px] mx-auto">
           {metrics.map((metric, index) => {
             const cardTheme = CARD_THEMES[index % CARD_THEMES.length];
             return (
               <ScrollReveal key={metric.id} delay={index * 0.1}>
                 <div
-                  className={`${cardTheme} rounded-[16px] p-7 sm:p-9 h-full flex flex-col justify-between shadow-xl`}
+                  className={`${cardTheme} relative overflow-hidden rounded-[16px] p-5 sm:p-6 lg:p-7 h-full flex flex-col justify-between shadow-xl`}
                 >
-                  <div>
-                    <span className="text-xs font-mono-tabular font-bold uppercase tracking-widest opacity-80 block mb-4">
+                  {/* Ripple Background Animation (Concentric Circles from Bottom-Left) */}
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
+                    {/* xxlarge shade1 */}
+                    <span className="absolute rounded-full bg-white opacity-20 w-[1000px] h-[1000px] -left-[500px] -bottom-[500px] animate-ripple shadow-[0px_0px_1px_0px_#508fb9]"></span>
+
+                    {/* xlarge shade2 */}
+                    <span className="absolute rounded-full bg-white opacity-40 w-[800px] h-[800px] -left-[400px] -bottom-[400px] animate-ripple shadow-[0px_0px_1px_0px_#508fb9]"></span>
+
+                    {/* large shade3 */}
+                    <span className="absolute rounded-full bg-white opacity-55 w-[600px] h-[600px] -left-[300px] -bottom-[300px] animate-ripple shadow-[0px_0px_1px_0px_#508fb9]"></span>
+
+                    {/* medium shade4 */}
+                    <span className="absolute rounded-full bg-white opacity-70 w-[400px] h-[400px] -left-[200px] -bottom-[200px] animate-ripple shadow-[0px_0px_1px_0px_#508fb9]"></span>
+
+                    {/* small shade5 */}
+                    <span className="absolute rounded-full bg-white opacity-85 w-[200px] h-[200px] -left-[100px] -bottom-[100px] animate-ripple shadow-[0px_0px_1px_0px_#508fb9]"></span>
+                  </div>
+
+                  <div className="relative z-10">
+                    <span className="text-[11px] sm:text-xs font-mono-tabular font-bold uppercase tracking-widest opacity-80 block mb-2.5 sm:mb-3">
                       0{index + 1} · {metric.label.toUpperCase()}
                     </span>
 
-                    <div className="font-display-sans text-6xl sm:text-7xl lg:text-[5rem] font-black tracking-[-0.05em] leading-none">
+                    <div className="font-display-sans text-5xl sm:text-6xl lg:text-[3.75rem] font-black tracking-[-0.05em] leading-none">
                       <AnimatedCounter
                         value={metric.value}
                         suffix={metric.suffix}
@@ -72,12 +79,12 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({
                     </div>
                   </div>
 
-                  <div className="mt-8 pt-5 border-t border-[#122023]/15">
-                    <h3 className="font-display-sans uppercase text-xl font-black tracking-tight">
+                  <div className="mt-6 pt-4 border-t border-[#122023]/15 relative z-10">
+                    <h3 className="font-display-sans uppercase text-lg sm:text-xl font-black tracking-tight">
                       {metric.label}
                     </h3>
 
-                    <p className="mt-1.5 text-xs sm:text-sm font-medium opacity-85 leading-relaxed">
+                    <p className="mt-1 text-xs sm:text-sm font-medium opacity-85 leading-relaxed">
                       {metric.sublabel}
                     </p>
                   </div>
