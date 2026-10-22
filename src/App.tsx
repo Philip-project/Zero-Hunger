@@ -68,7 +68,7 @@ function AppContent() {
               path="/impact"
               element={<Impact onOpenSupport={handleOpenSupport} />}
             />
-            <Route path="/contact" element={<Navigate to="/about#contact" replace />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </PageTransition>

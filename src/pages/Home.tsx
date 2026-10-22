@@ -1,5 +1,5 @@
-import { ArrowUpRight, Download, Sliders, Sparkles } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import { Hero } from '../components/Hero';
 import { ImpactStats } from '../components/ImpactStats';
 import { BuyOneGiveOneSection } from '../components/BuyOneGiveOneSection';
@@ -12,7 +12,6 @@ import { EditorialImage } from '../components/EditorialImage';
 import { Button } from '../components/Button';
 import { FEATURED_PROJECT } from '../data/projects';
 import { SupportTab } from '../components/SupportModal';
-import { BrutalistPosterLockup } from '../components/BrutalistPosterLockup';
 
 interface HomeProps {
   onOpenSupport: (tab?: SupportTab, projectSlug?: string) => void;
@@ -164,70 +163,6 @@ export const Home: React.FC<HomeProps> = ({ onOpenSupport }) => {
 
       {/* SECTION 5.8 — COMMUNITY DRIVES: CELEBRATE OCCASIONS, CLOTH DONATIONS, FOOD RESCUE & CSR */}
       <CommunityDrivesShowcase />
-
-      {/* SECTION 5.9 — THE ACTIVIST VISUAL IDENTITY: NO ONE SHOULD SLEEP */}
-      <section className="bg-black text-white py-20 sm:py-28 border-t border-white/10 relative overflow-hidden">
-        <div className="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            {/* Left: 1:1 Live Poster Render matching user's graphic */}
-            <div className="lg:col-span-6 flex justify-center lg:justify-start">
-              <div className="w-full max-w-[480px] aspect-square bg-black border border-white/15 rounded-[8px] p-6 sm:p-10 shadow-2xl flex flex-col justify-start relative group">
-                <div className="pointer-events-none absolute inset-0 opacity-[0.03] mix-blend-screen bg-repeat bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
-                <div className="relative z-10 w-full">
-                  <BrutalistPosterLockup
-                    eyebrow="ZERO HUNGER INITIATIVE · HYDERABAD"
-                    lines={['NO ONE', 'SHOULD', 'SLEEP']}
-                    styleVariant="all-red"
-                    palette="signature"
-                    size="lg"
-                    animated={false}
-                  />
-                </div>
-                <div className="mt-auto pt-6 flex items-center justify-between border-t border-white/10 relative z-10">
-                  <span className="text-[10px] font-mono-tabular uppercase tracking-widest text-white/50">
-                    FIG. 00 · CAMPAIGN POSTER
-                  </span>
-                  <Link
-                    to="/poster-studio"
-                    className="text-[11px] font-mono-tabular uppercase tracking-wider font-bold text-[#39FF14] hover:underline"
-                  >
-                    Open Studio ↗
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Activist Story & Export CTA */}
-            <div className="lg:col-span-6">
-              <span className="text-xs font-mono-tabular font-bold uppercase tracking-[0.22em] text-[#39FF14] block mb-3">
-                HUMANITARIAN IDENTITY · HYDERABAD
-              </span>
-              <h2 className="font-display-sans uppercase text-3xl sm:text-5xl font-black tracking-[-0.04em] leading-[0.95] text-white">
-                A VISUAL MANIFESTO:
-                <br />
-                <span className="text-[#E21B23]">NO ONE SHOULD SLEEP.</span>
-              </h2>
-              <p className="mt-5 text-sm sm:text-base text-white/80 leading-relaxed max-w-xl">
-                Designed with brutalist clarity, high-contrast red badge blocks, and an uncompromising message. Spread the word across community centers, university campuses, food banks, and social media.
-              </p>
-
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <Button to="/poster-studio" variant="primary" size="lg">
-                  <Sliders className="w-4 h-4" />
-                  <span>Customize in Poster Studio</span>
-                </Button>
-                <Link
-                  to="/poster-studio"
-                  className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 text-white px-5 py-3 rounded-[10px] text-xs font-bold uppercase tracking-wider transition-all"
-                >
-                  <Download className="w-4 h-4 text-[#39FF14]" />
-                  <span>Download Print & Vector Assets</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* SECTION 6 — CALL TO ACTION */}
       <CTASection onOpenSupport={onOpenSupport} />

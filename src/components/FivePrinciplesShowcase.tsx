@@ -141,8 +141,8 @@ const BrushstrokeLoopSvg: React.FC<{ className?: string }> = ({
 
 export const FivePrinciplesShowcase: React.FC = () => {
   return (
-    <section className="w-full bg-[#122023] text-white py-16 xs:py-20 sm:py-28 border-b border-white/10 overflow-hidden">
-      <div className="w-full max-w-[1360px] 2xl:max-w-[1560px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 xl:px-16">
+    <section className="bg-[#122023] text-white py-20 sm:py-28 border-b border-white/10 overflow-hidden">
+      <div className="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
         {/* ===================================================================
             TOP HEADER: TWO-TONE CONDENSED DISPLAY HEADLINE + STARBURST & COPY
         ==================================================================== */}

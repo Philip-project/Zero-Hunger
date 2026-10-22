@@ -1,213 +1,173 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  ShoppingBag,
-  Heart,
-  Ticket,
-  ChefHat,
-  MapPin,
-  CheckCircle2,
-  ArrowRight,
-  ShieldCheck,
-} from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
 
-interface Step {
+interface StepCardItem {
   number: string;
-  stepLabel: string;
-  title: string;
+  titleLines: [string, string];
   description: string;
-  icon: React.ElementType;
-  accentColor: string;
-  tag: string;
-  proofDetail: string;
+  bgClass: string;
+  href: string;
 }
 
-const STEPS: Step[] = [
+const STEPS: StepCardItem[] = [
   {
-    number: '01',
-    stepLabel: 'STEP 01',
-    title: 'Choose Your ₹150 Meal Box',
+    number: '1',
+    titleLines: ['CHOOSE YOUR', '₹150 MEAL BOX'],
     description:
-      'Select a freshly prepared Protein, Veg, or Kids nutrition box from our daily Hyderabad kitchen menu.',
-    icon: ShoppingBag,
-    accentColor: '#49E619',
-    tag: 'Daily Fresh Prep',
-    proofDetail: 'Menu rotated daily with local grains & vegetables',
+      'Select any freshly prepared ₹150 Protein, Veg, or Kids nutrition box from our daily Hyderabad kitchen menu.',
+    bgClass: 'bg-[#49E619]',
+    href: '/meal-box',
   },
   {
-    number: '02',
-    stepLabel: 'STEP 02',
-    title: '1-for-1 Dual Checkout',
+    number: '2',
+    titleLines: ['1-FOR-1 DUAL', 'CHECKOUT'],
     description:
-      'Pay only ₹150 for your own meal. Our Buy 1, Give 1 model automatically funds a second hot meal for a child in need.',
-    icon: Heart,
-    accentColor: '#4EDBE2',
-    tag: '₹150 Funds 2 Meals',
-    proofDetail: 'Zero markup charity allocation built into pricing',
+      'Pay only ₹150 for your own meal. Our Buy 1, Give 1 program automatically funds a second hot meal for a child at ₹0 extra cost.',
+    bgClass: 'bg-[#4EDBE2]',
+    href: '/meal-box',
   },
   {
-    number: '03',
-    stepLabel: 'STEP 03',
-    title: 'Receive Your Impact Token',
+    number: '3',
+    titleLines: ['RECEIVE YOUR', 'IMPACT TOKEN'],
     description:
-      'A unique Charity Token connects your purchase to the sponsored child meal for 100% verifiable tracking.',
-    icon: Ticket,
-    accentColor: '#B9FF2C',
-    tag: 'Cryptographic Hash',
-    proofDetail: 'Token stamped: ZH-2026-A8F42K format',
+      'Our backend generates a unique Charity Token (e.g. ZH-2026-A8F42K) linking your purchase to a sponsored child meal.',
+    bgClass: 'bg-[#B9FF2C]',
+    href: '/track-meal?token=ZH-2026-A8F42K',
   },
   {
-    number: '04',
-    stepLabel: 'STEP 04',
-    title: 'Cooked Fresh in Our Kitchen',
+    number: '4',
+    titleLines: ['COOKED FRESH', 'IN OUR KITCHEN'],
     description:
-      "Your meal is prepared fresh while the sponsored child's balanced meal is prepared in hygienic, FSSAI-certified community batches.",
-    icon: ChefHat,
-    accentColor: '#25C862',
-    tag: 'Hygienic Batches',
-    proofDetail: 'Clean stainless steel kitchen · Zero single-use plastic',
+      'Your meal is dispatched hot to your doorstep while the child’s balanced meal is prepared in thermal-sealed community batches.',
+    bgClass: 'bg-[#188D44]',
+    href: '/track-meal?token=ZH-2026-A8F42K',
   },
   {
-    number: '05',
-    stepLabel: 'STEP 05',
-    title: 'Assigned to Community Hub',
+    number: '5',
+    titleLines: ['ASSIGNED TO', 'COMMUNITY HUB'],
     description:
-      'The sponsored meal is routed to a Hyderabad community centre and paired with an anonymized Beneficiary ID.',
-    icon: MapPin,
-    accentColor: '#4EDBE2',
-    tag: 'Geotagged Dispatch',
-    proofDetail: 'Dispatched in insulated stainless steel tiffins',
+      'The sponsored meal is routed to a Hyderabad community center and paired with an anonymized Beneficiary ID (ZH-10482).',
+    bgClass: 'bg-[#F2F4F3]',
+    href: '/track-meal?token=ZH-2026-A8F42K',
   },
   {
-    number: '06',
-    stepLabel: 'STEP 06',
-    title: 'Child Receives Meal & Proof',
+    number: '6',
+    titleLines: ['CHILD RECEIVES', 'MEAL & PROOF'],
     description:
-      'Once served, our field team marks the token delivered and sends your instant digital impact notification.',
-    icon: CheckCircle2,
-    accentColor: '#49E619',
-    tag: 'Verified Delivery',
-    proofDetail: 'Delivery photo & timestamp uploaded to ledger',
+      'Once served, our field team marks the token delivered, uploads a safeguarding-cleared photo, and sends your impact notification.',
+    bgClass: 'bg-[#49E619]',
+    href: '/track-meal?token=ZH-2026-A8F42K',
   },
 ];
 
-export const PlateToHandsSteps: React.FC = () => {
+/**
+ * 18-Point Geometric Starburst SVG matching the reference header icon
+ */
+const StarburstBadge: React.FC<{ className?: string }> = ({ className }) => {
+  const points = 18;
+  const outerRadius = 24;
+  const innerRadius = 17.5;
+  const center = 24;
+  const coords: string[] = [];
+
+  for (let i = 0; i < points * 2; i++) {
+    const angle = (i * Math.PI) / points - Math.PI / 2;
+    const r = i % 2 === 0 ? outerRadius : innerRadius;
+    const x = center + r * Math.cos(angle);
+    const y = center + r * Math.sin(angle);
+    coords.push(`${x.toFixed(2)},${y.toFixed(2)}`);
+  }
+
   return (
-    <div className="w-full">
-      {/* Header */}
-      <ScrollReveal>
-        <div className="max-w-3xl mb-12">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="w-2 h-2 rounded-full bg-[#49E619] animate-pulse" />
-            <span className="text-xs font-mono-tabular font-bold uppercase tracking-[0.22em] text-[#49E619]">
-              HOW YOUR MEAL CREATES IMPACT · 6-STAGE TOKEN TRAIL
-            </span>
-          </div>
-
-          <h2 className="font-display-sans uppercase text-3xl sm:text-4xl lg:text-5xl font-black tracking-[-0.04em] leading-[0.96] text-white">
-            FROM YOUR PLATE TO <br />
-            <span className="text-[#49E619]">A CHILD'S HANDS</span>
-          </h2>
-
-          <p className="mt-4 text-sm sm:text-base text-white/75 leading-relaxed max-w-2xl">
-            Follow your meal’s journey from checkout to a child’s hands. Every step
-            is connected, geotagged, and backed by a 100% verifiable impact token trail.
-          </p>
-        </div>
-      </ScrollReveal>
-
-      {/* 6 Bento Grid Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-        {STEPS.map((step, idx) => {
-          const Icon = step.icon;
-
-          return (
-            <ScrollReveal key={step.number} delay={0.06 * idx}>
-              <div className="group relative rounded-[18px] bg-[#122023] border border-white/10 hover:border-white/25 p-6 sm:p-7 flex flex-col justify-between h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/60">
-                <div>
-                  {/* Top Bar: Step Number & Icon */}
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="font-mono-tabular text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded-[6px] border border-white/15 bg-white/5 text-white/90">
-                      {step.stepLabel}
-                    </span>
-                    <div
-                      className="w-10 h-10 rounded-[10px] flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                      style={{
-                        backgroundColor: `${step.accentColor}20`,
-                        color: step.accentColor,
-                      }}
-                    >
-                      <Icon className="w-5 h-5 stroke-[2]" />
-                    </div>
-                  </div>
-
-                  {/* Step Title */}
-                  <h3 className="font-display-sans uppercase text-xl sm:text-2xl font-black text-white tracking-tight leading-snug transition-colors">
-                    {step.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="mt-3 text-xs sm:text-sm text-white/75 leading-relaxed">
-                    {step.description}
-                  </p>
-
-                  <p className="mt-2 text-[11px] text-white/50 leading-normal italic">
-                    {step.proofDetail}
-                  </p>
-                </div>
-
-                {/* Bottom Metadata Strip */}
-                <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between gap-2 text-xs">
-                  <span
-                    className="font-mono-tabular text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-[4px]"
-                    style={{
-                      backgroundColor: `${step.accentColor}18`,
-                      color: step.accentColor,
-                    }}
-                  >
-                    {step.tag}
-                  </span>
-                  <span className="text-[11px] text-white/50 font-mono-tabular">
-                    STAGE {step.number} / 06
-                  </span>
-                </div>
-              </div>
-            </ScrollReveal>
-          );
-        })}
-      </div>
-
-      {/* Assurance / Tracking Strip */}
-      <ScrollReveal delay={0.25}>
-        <div className="mt-10 rounded-[16px] bg-[#122023]/80 border border-white/10 p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-full bg-[#49E619]/15 border border-[#49E619]/30 flex items-center justify-center text-[#49E619] shrink-0">
-              <ShieldCheck className="w-5 h-5" />
-            </div>
-            <div>
-              <p className="text-sm font-bold text-white">
-                Complete Chain-of-Custody Guarantee
-              </p>
-              <p className="text-xs text-white/60">
-                Every ₹150 meal is timestamped, audited, and viewable in the real-time public delivery ledger.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto">
-            <Link
-              to="/track-meal"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[8px] bg-[#49E619] hover:bg-[#B9FF2C] text-[#080808] text-xs font-bold uppercase tracking-wider transition-colors"
-            >
-              <span>Track Live Token</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </div>
-      </ScrollReveal>
-    </div>
+    <svg
+      viewBox="0 0 48 48"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <polygon points={coords.join(' ')} />
+    </svg>
   );
 };
 
-export default PlateToHandsSteps;
+export const PlateToHandsSteps: React.FC = () => {
+  return (
+    <div className="bg-[#122023] text-white rounded-2xl sm:rounded-[24px] px-4 sm:px-10 lg:px-14 py-12 sm:py-20 lg:py-22 shadow-2xl overflow-hidden">
+      {/* =====================================================================
+          TOP HEADER ROW: LEFT CONDENSED DISPLAY TITLE + RIGHT STARBURST & COPY
+      ====================================================================== */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start mb-10 sm:mb-16">
+        {/* Left 7 Columns: Eyebrow + Condensed Uppercase Headline */}
+        <ScrollReveal className="lg:col-span-7">
+          <span className="text-xs sm:text-sm font-medium text-[#49E619] tracking-tight block mb-3">
+            From your plate to a child’s hands
+          </span>
+
+          <h3 className="font-display-sans uppercase text-white text-3xl sm:text-5xl md:text-6xl lg:text-[68px] font-black leading-[0.92] tracking-[-0.045em]">
+            HOW YOUR MEAL
+            <br />
+            CREATES IMPACT
+          </h3>
+        </ScrollReveal>
+
+        {/* Right 5 Columns: White Starburst Icon + Editorial Explanation */}
+        <ScrollReveal
+          delay={0.1}
+          className="lg:col-span-5 lg:pl-6 flex flex-col items-start"
+        >
+          <StarburstBadge className="w-10 h-10 sm:w-12 sm:h-12 text-white mb-4 sm:mb-5 shrink-0" />
+
+          <p className="text-xs sm:text-sm md:text-[15px] text-white/90 leading-relaxed max-w-md font-normal">
+            Wherever you are in Hyderabad, every ₹150 meal box gives your
+            purchase a clear path forward — nourishing you today while our
+            community kitchen prepares, dispatches, and verifies a hot meal for
+            a child in need.
+          </p>
+
+          <Link
+            to="/track-meal?token=ZH-2026-A8F42K"
+            className="mt-4 inline-flex items-center gap-1.5 text-xs font-mono-tabular uppercase tracking-widest text-[#49E619] hover:text-white transition-colors"
+          >
+            <span>Inspect Live Token (ZH-2026-A8F42K)</span>
+            <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+          </Link>
+        </ScrollReveal>
+      </div>
+
+      {/* =====================================================================
+          2×3 BENTO GRID OF OVERSIZED NUMBERED CARDS (1 TO 6)
+      ====================================================================== */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3">
+        {STEPS.map((step, index) => (
+          <ScrollReveal key={step.number} delay={0.05 * index}>
+            <Link
+              to={step.href}
+              className={`${step.bgClass} group relative rounded-[14px] sm:rounded-[16px] min-h-[190px] sm:min-h-[240px] lg:min-h-[265px] overflow-hidden grid grid-cols-12 items-center transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white`}
+            >
+              {/* Left Column: Oversized Cropped Numeral (1–6) */}
+              <div className="col-span-4 sm:col-span-5 h-full flex items-end pl-2 sm:pl-5 lg:pl-6 pt-6 pointer-events-none select-none overflow-hidden">
+                <span className="font-display-sans font-black text-[#122023] text-[120px] sm:text-[185px] md:text-[165px] lg:text-[225px] leading-[0.74] tracking-[-0.06em] -mb-2 sm:-mb-4 block">
+                  {step.number}
+                </span>
+              </div>
+
+              {/* Right Column: Bold Condensed Uppercase Heading + Description */}
+              <div className="col-span-8 sm:col-span-7 pr-4 sm:pr-7 lg:pr-10 py-5 sm:py-8 flex flex-col justify-center">
+                <h4 className="font-display-sans uppercase text-[#122023] text-lg sm:text-2xl md:text-xl lg:text-[28px] font-black leading-[0.94] tracking-[-0.035em]">
+                  <span className="block">{step.titleLines[0]}</span>
+                  <span className="block">{step.titleLines[1]}</span>
+                </h4>
+
+                <p className="mt-2.5 sm:mt-4 text-xs sm:text-[13px] text-[#122023]/85 font-medium leading-[1.45] max-w-[270px]">
+                  {step.description}
+                </p>
+              </div>
+            </Link>
+          </ScrollReveal>
+        ))}
+      </div>
+    </div>
+  );
+};

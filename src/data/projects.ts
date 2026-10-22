@@ -48,7 +48,6 @@ export interface Project {
 
 export const IMAGES = {
   heroMeals: '/src/assets/images/hero_community_meals_1790672974684.jpg',
-  zeroHungerHero: '/src/assets/images/zero_hunger_hero_1792133734450.jpg',
   schoolNutrition: '/src/assets/images/project_school_nutrition_1790672995041.jpg',
   emergencyRelief: '/src/assets/images/project_emergency_relief_1790673011442.jpg',
   communityKitchen: '/src/assets/images/project_community_kitchen_1790673027388.jpg',

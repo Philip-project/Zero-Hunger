@@ -19,8 +19,8 @@ const EXPLORE_LINKS = [
   { label: 'CSR & 80G Tax Benefits', path: '/csr-tax-benefits' },
   { label: 'Track Sponsored Meal', path: '/track-meal' },
   { label: 'Projects & Impact', path: '/projects' },
-  { label: 'About Us', path: '/about' },
-  { label: 'Contact Us', path: '/about#contact' },
+  { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' },
 ];
 
 const SOCIAL_LINKS = [
@@ -33,7 +33,7 @@ const SOCIAL_LINKS = [
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#080808] text-white border-t border-white/10 pt-20 pb-12">
-      <div className="w-full max-w-[1360px] 2xl:max-w-[1560px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 xl:px-16">
+      <div className="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/10">
           {/* Left Brand Column */}
           <div className="lg:col-span-5 pr-0 lg:pr-12">
@@ -123,16 +123,16 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="tel:+919848024190"
+                  href="tel:+914023456789"
                   className="hover:text-white transition-colors inline-flex items-center gap-2.5 font-mono-tabular"
                 >
                   <Phone className="w-4 h-4 text-[#49E619] shrink-0" />
-                  <span>+91 98480 24190</span>
+                  <span>+91 40 2345 6789</span>
                 </a>
               </li>
               <li className="inline-flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#49E619] shrink-0 mt-0.5" />
-                <span>Secunderabad & Hyderabad, India</span>
+                <span>Hyderabad, India</span>
               </li>
             </ul>
           </div>

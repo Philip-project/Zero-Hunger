@@ -16,7 +16,8 @@ const NAV_ITEMS = [
   { label: 'Track Meal', path: '/track-meal', hideOnCompact: false },
   { label: 'Projects & Impact', path: '/projects', hideOnCompact: false },
   { label: 'CSR & Tax', path: '/csr-tax-benefits', hideOnCompact: false },
-  { label: 'About Us', path: '/about', hideOnCompact: false },
+  { label: 'About', path: '/about', hideOnCompact: true },
+  { label: 'Contact', path: '/contact', hideOnCompact: true },
 ];
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenSupport }) => {
@@ -46,7 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSupport }) => {
           : 'bg-[#080808]/85 backdrop-blur-xs border-b border-white/10 py-4'
       }`}
     >
-      <div className="w-full max-w-[1360px] 2xl:max-w-[1560px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 xl:px-16 flex items-center justify-between">
+      <div className="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
         {/* Zone 1: Brand Wordmark */}
         <Link
           to="/"
@@ -58,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSupport }) => {
         {/* Zone 2: Primary Navigation Links */}
         <nav
           aria-label="Primary Navigation"
-          className="hidden xl:flex items-center gap-5 2xl:gap-7"
+          className="hidden md:flex items-center gap-6 lg:gap-8"
         >
           {NAV_ITEMS.map((item) => (
             <NavLink
@@ -66,7 +67,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSupport }) => {
               to={item.path}
               end={item.path === '/'}
               className={({ isActive }) =>
-                `relative py-1 text-sm font-medium tracking-tight whitespace-nowrap transition-colors duration-200 group ${
+                `${
+                  item.hideOnCompact ? 'hidden xl:inline-block' : ''
+                } relative py-1 text-sm font-medium tracking-tight whitespace-nowrap transition-colors duration-200 group ${
                   isActive
                     ? 'text-[#49E619]'
                     : 'text-white/80 hover:text-white'
@@ -89,13 +92,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSupport }) => {
           ))}
         </nav>
 
-        {/* Zone 3: Primary Actions + Mobile/Tablet Hamburger */}
-        <div className="flex items-center gap-2.5 sm:gap-3">
+        {/* Zone 3: Primary Actions + Mobile Hamburger */}
+        <div className="flex items-center gap-3">
           {cartCount > 0 && (
             <Link
               to="/meal-box"
               aria-label={`View Meal Box Cart with ${cartCount} items`}
-              className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-2 rounded-[8px] text-xs font-mono-tabular font-bold border border-[#49E619]/40 bg-[#122023] text-white hover:border-[#49E619] hover:bg-[#49E619] hover:text-[#080808] transition-colors whitespace-nowrap group"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-[8px] text-xs font-mono-tabular font-bold border border-[#49E619]/40 bg-[#122023] text-white hover:border-[#49E619] hover:bg-[#49E619] hover:text-[#080808] transition-colors whitespace-nowrap group"
             >
               <ShoppingBag className="w-3.5 h-3.5 text-[#49E619] group-hover:text-[#080808]" />
               <span>{cartCount}</span>
@@ -105,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSupport }) => {
           <button
             type="button"
             onClick={() => onOpenSupport('donate')}
-            className="hidden sm:inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-[10px] text-xs sm:text-sm font-bold tracking-tight whitespace-nowrap bg-[#49E619] text-[#080808] hover:bg-[#B9FF2C] transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#49E619]"
+            className="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-[10px] text-xs sm:text-sm font-bold tracking-tight whitespace-nowrap bg-[#49E619] text-[#080808] hover:bg-[#B9FF2C] transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#49E619]"
           >
             Support the Mission
           </button>
@@ -117,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSupport }) => {
             aria-label={
               mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'
             }
-            className="xl:hidden w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center text-white hover:text-[#49E619] transition-colors cursor-pointer"
+            className="md:hidden w-11 h-11 flex items-center justify-center text-white hover:text-[#49E619] transition-colors cursor-pointer"
           >
             {mobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -136,7 +139,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSupport }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="xl:hidden bg-[#122023] border-b border-white/10 px-5 pt-4 pb-8 shadow-2xl"
+            className="md:hidden bg-[#122023] border-b border-white/10 px-5 pt-4 pb-8 shadow-2xl"
           >
             <nav
               aria-label="Mobile Navigation"

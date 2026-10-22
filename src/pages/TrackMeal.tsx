@@ -323,57 +323,6 @@ export const TrackMeal: React.FC = () => {
                 </div>
               </div>
 
-              {/* LIVE KITCHEN DISPATCH & PACKAGING SHOWCASE */}
-              <div className="rounded-[20px] bg-[#080808] border border-white/15 overflow-hidden shadow-2xl">
-                <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-                  <div className="lg:col-span-7 relative min-h-[280px] sm:min-h-[360px] lg:min-h-[400px] bg-[#122023]">
-                    <img
-                      src="/src/assets/images/track_meal_delivery_1791400616620.jpg"
-                      alt="Zero Hunger live kitchen counter dispatch with delivery volunteer picking up fresh meal boxes"
-                      referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover object-center"
-                    />
-                    <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#080808]/85 backdrop-blur-md border border-white/20 text-xs font-mono-tabular font-bold text-[#49E619]">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#49E619] animate-pulse" />
-                      <span>LIVE DISPATCH · MEAL READY</span>
-                    </div>
-                    <div className="absolute bottom-3 left-3 right-3 rounded-[10px] bg-[#080808]/90 backdrop-blur-md border border-white/10 px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs font-mono-tabular text-white/90">
-                      <span>ZERO HUNGER CORPS · SECUNDERABAD HUB</span>
-                      <span className="text-[#49E619] font-bold">100% FRESHLY PREPARED</span>
-                    </div>
-                  </div>
-
-                  <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-gradient-to-br from-[#0c1618] to-[#080808]">
-                    <div>
-                      <span className="font-mono-tabular text-xs font-bold uppercase tracking-[0.22em] text-[#49E619] block mb-2">
-                        LIVE KITCHEN OPERATIONS
-                      </span>
-                      <h3 className="font-display-sans uppercase text-2xl sm:text-3xl font-black text-white leading-tight">
-                        Kitchen Dispatch & Packaging Counter
-                      </h3>
-                      <p className="mt-3 text-sm text-white/75 leading-relaxed">
-                        Every ₹150 meal box triggers real-time preparation in our community kitchen. Our dedicated volunteer field couriers pack fresh, balanced meals into insulated carriers and dispatch them directly to verified beneficiary distribution hubs across Hyderabad.
-                      </p>
-                    </div>
-
-                    <div className="mt-6 pt-6 border-t border-white/10 space-y-3">
-                      <div className="flex items-center justify-between text-xs font-mono-tabular">
-                        <span className="text-white/60">DISPATCH BATCH</span>
-                        <span className="text-white font-bold">{activeToken.tokenNumber}</span>
-                      </div>
-                      <div className="flex items-center justify-between text-xs font-mono-tabular">
-                        <span className="text-white/60">DESTINATION HUB</span>
-                        <span className="text-[#49E619] font-bold truncate max-w-[200px] text-right">{activeToken.deliveryLocation}</span>
-                      </div>
-                      <div className="flex items-center justify-between text-xs font-mono-tabular">
-                        <span className="text-white/60">THERMAL PACKAGING</span>
-                        <span className="text-[#B9FF2C] font-bold">INSULATED & ECO-SAFE</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               {/* INTERACTIVE LEAFLET GEOSPATIAL MAP: COMMUNITY KITCHENS & DELIVERY PATHS */}
               <DeliveryRouteMap token={activeToken} />
 
@@ -564,18 +513,6 @@ export const TrackMeal: React.FC = () => {
                         . Once our field team confirms handoff and uploads the
                         delivery photo, your impact proof will appear here.
                       </p>
-
-                      <div className="mt-5 rounded-[12px] overflow-hidden border border-white/15 aspect-[16/9] relative">
-                        <img
-                          src="/src/assets/images/track_meal_delivery_1791400616620.jpg"
-                          alt="Meal ready at kitchen counter for field courier dispatch"
-                          referrerPolicy="no-referrer"
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#080808]/85 text-xs font-mono-tabular font-bold text-[#49E619] border border-white/15 backdrop-blur-xs">
-                          KITCHEN COUNTER · READY FOR DISPATCH
-                        </div>
-                      </div>
 
                       <div className="mt-6 pt-6 border-t border-white/10 flex flex-wrap items-center gap-4">
                         <button
