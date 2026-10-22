@@ -136,8 +136,8 @@ export const MissionProgramsShowcase: React.FC<
   };
 
   return (
-    <section className="w-full bg-[#080808] text-white py-16 xs:py-20 sm:py-28 border-y border-white/10 overflow-hidden">
-      <div className="w-full max-w-[1360px] 2xl:max-w-[1560px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 xl:px-16">
+    <section className="bg-[#080808] text-white py-20 sm:py-28 border-y border-white/10 overflow-hidden">
+      <div className="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
         {/* ===================================================================
             TOP HEADER: CONDENSED TWO-TONE HEADLINE + DESCRIPTION + ARROWS
         ==================================================================== */}
@@ -214,21 +214,21 @@ export const MissionProgramsShowcase: React.FC<
                     {program.description}
                   </p>
 
-                  {/* Dual Rounded Action Buttons: Green "Explore programs ↗" + White "Learn more ↗" */}
-                  <div className="mt-5 xs:mt-6 grid grid-cols-1 xs:grid-cols-2 gap-2 sm:gap-2.5">
+                  {/* Dual Pill/Rounded Buttons: Green "Explore programs ↗" + White "Learn more ↗" */}
+                  <div className="mt-6 grid grid-cols-2 gap-2.5">
                     <Link
                       to={program.exploreHref}
-                      className="rounded-[10px] bg-[#49E619] hover:bg-[#3cd110] text-[#080808] py-2.5 xs:py-3 px-2 xs:px-3 text-[11px] xs:text-xs font-semibold inline-flex items-center justify-center gap-1 transition-colors"
+                      className="rounded-[10px] bg-[#49E619] hover:bg-[#3cd110] text-[#080808] py-3 px-3 text-xs font-semibold inline-flex items-center justify-center gap-1 transition-colors whitespace-nowrap"
                     >
-                      <span className="truncate">Explore programs</span>
+                      <span>Explore programs</span>
                       <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
                     </Link>
 
                     <Link
                       to={program.learnHref}
-                      className="rounded-[10px] bg-white hover:bg-[#F2F4F3] text-[#080808] py-2.5 xs:py-3 px-2 xs:px-3 text-[11px] xs:text-xs font-semibold inline-flex items-center justify-center gap-1 transition-colors"
+                      className="rounded-[10px] bg-white hover:bg-[#F2F4F3] text-[#080808] py-3 px-3 text-xs font-semibold inline-flex items-center justify-center gap-1 transition-colors whitespace-nowrap"
                     >
-                      <span className="truncate">Learn more</span>
+                      <span>Learn more</span>
                       <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
                     </Link>
                   </div>
@@ -277,7 +277,7 @@ export const MissionProgramsShowcase: React.FC<
                 </button>
               ) : (
                 <Link
-                  to="/contact"
+                  to="/about#contact"
                   className="group inline-flex items-center gap-3.5"
                 >
                   <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#122023] text-white flex items-center justify-center transition-transform duration-200 group-hover:scale-105">

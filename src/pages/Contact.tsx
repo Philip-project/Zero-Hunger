@@ -1,10 +1,25 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 /**
- * The Contact page has been merged into the About Us page (/about#contact).
- * This component preserves backwards-compatibility by redirecting to /about#contact.
+ * The Contact page has been merged into the "About Us" page at /about#contact.
+ * This component handles seamless automatic redirection.
  */
 export const Contact: React.FC = () => {
-  return <Navigate to="/about#contact" replace />;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate('/about#contact', { replace: true });
+  }, [navigate]);
+
+  return (
+    <div className="min-h-screen bg-[#080808] flex items-center justify-center text-white p-6">
+      <div className="text-center">
+        <div className="animate-spin w-8 h-8 border-2 border-[#49E619] border-t-transparent rounded-full mx-auto mb-4" />
+        <p className="text-sm font-mono-tabular uppercase tracking-widest text-white/70">
+          Redirecting to About Us & Contact...
+        </p>
+      </div>
+    </div>
+  );
 };

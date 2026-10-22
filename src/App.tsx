@@ -16,7 +16,6 @@ import { About } from './pages/About';
 import { Projects } from './pages/Projects';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { Impact } from './pages/Impact';
-import { Contact } from './pages/Contact';
 import { MealBox } from './pages/MealBox';
 import { TrackMeal } from './pages/TrackMeal';
 import { CelebrateAndGive } from './pages/CelebrateAndGive';
@@ -57,6 +56,14 @@ function AppContent() {
               element={<About onOpenSupport={handleOpenSupport} />}
             />
             <Route
+              path="/about-us"
+              element={<Navigate to="/about" replace />}
+            />
+            <Route
+              path="/contact"
+              element={<Navigate to="/about#contact" replace />}
+            />
+            <Route
               path="/projects"
               element={<Projects onOpenSupport={handleOpenSupport} />}
             />
@@ -68,7 +75,6 @@ function AppContent() {
               path="/impact"
               element={<Impact onOpenSupport={handleOpenSupport} />}
             />
-            <Route path="/contact" element={<Navigate to="/about#contact" replace />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </PageTransition>

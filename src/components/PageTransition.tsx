@@ -7,12 +7,23 @@ interface PageTransitionProps {
 }
 
 export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
-  }, [pathname]);
+    if (hash) {
+      const targetId = hash.replace('#', '');
+      const timer = setTimeout(() => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 150);
+      return () => clearTimeout(timer);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+    }
+  }, [pathname, hash]);
 
   if (prefersReducedMotion) {
     return <main>{children}</main>;
